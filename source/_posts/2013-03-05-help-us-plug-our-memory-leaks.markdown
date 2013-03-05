@@ -15,8 +15,9 @@ We're building a Markov chain generator that is trained on a corpus of 15MB of o
 Some things we've tried: 
 
  * Pickling the matrix. Not pickling the matrix. (didn't help)
- * Mapping the words as `int`s in our matrix rather than `string`s (helped)
+ * Storing the words as `int`s in our matrix rather than `string`s (helped)
  * Tweaked the data structure (helped, could probably do more with this)
+ * We ran out of time, but want to try some sort of data store. Redis? 
 
 **What should we try next?**
 
