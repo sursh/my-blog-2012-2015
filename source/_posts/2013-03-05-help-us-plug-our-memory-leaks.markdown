@@ -21,6 +21,8 @@ Some things we've tried:
 
 **What should we try next?**
 
+Very unfinished code: 
+
 ``` python The code + a few half-finished experiments 
 import sys
 import time
