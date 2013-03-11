@@ -19,7 +19,9 @@ Some things we've tried:
  * Tweaked the data structure (helped, could probably do more with this)
  * We ran out of time, but want to try some sort of data store. Redis? 
 
-**What should we try next?**
+**What should we try next?** Our code after the jump: 
+
+<!-- more -->
 
 Very unfinished code: 
 
