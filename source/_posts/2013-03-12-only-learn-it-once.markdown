@@ -4,6 +4,7 @@ title: "Only Learn It Once"
 date: 2013-03-12 17:25
 comments: true
 categories: [hackerschool, anki]
+published: false
 ---
 
 Hacker School is short! It's just 12 precious weeks. I'm very conscious of making the most of my time here. One strategy I'm trying out is ["only touch it once"](https://www.google.com/search?q=only+touch+it+once&aq=f&oq=only+touch+it+once) from handling email. 
