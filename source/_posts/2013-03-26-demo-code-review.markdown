@@ -4,7 +4,6 @@ title: "Demo code review"
 date: 2013-03-26 17:35
 comments: true
 categories: hackerschool
-published: false
 ---
 
 A big part of life at [Hacker School](http://hackerschool.com) is code reviews. Facilitators review code but for the most part, it's our super talented peers. 
