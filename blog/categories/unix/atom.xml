@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: unix | Sasha Laundy]]></title>
+  <link href="http://sursh.github.com/blog/categories/unix/atom.xml" rel="self"/>
+  <link href="http://sursh.github.com/"/>
+  <updated>2013-03-27T16:03:11-04:00</updated>
+  <id>http://sursh.github.com/</id>
+  <author>
+    <name><![CDATA[Sasha Laundy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[On Rakefiles and Rabbit Holes]]></title>
+    <link href="http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/"/>
+    <updated>2013-03-25T15:34:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes</id>
+    <content type="html"><![CDATA[<p><strong>TL;DR.</strong> I noticed a bug in Octopress. In fixing it, I found a separate, truly spectacular error, and learned a lot of interesting things about bash. I would never have learned so much outside of Hacker School, since it gives me the time and space to open up the box.</p>
+
+<h2>The original bug.</h2>
+
+<p>Octopress' <code>rake preview</code> lets you preview your post in the browser before deploying. It spawns Rack to serve local requests and Guard to watch for file changes. Guard in turn spawns Fsevent to do the actual watching.</p>
+
+<p><code>bash Handy pstree is handy.
+$ pstree
+...
+ | | \-+= 31340 root login -pf sasha
+ | |   \-+= 31341 sasha -bash
+ | |     \-+= 31430 sasha ruby /.../ruby-1.9.3-p374/bin/rake
+ | |       |-+- 31433 sasha ruby /.../ruby-1.9.3-p374/bin/gua
+ | |       | \--= 31443 sasha /.../ruby-1.9.3-p374/gems/rb-fs
+ | |       \--- 31434 sasha (ruby)
+...
+</code></p>
+
+<p>But when you <code>crtl-C</code>, Fsevent stays running in the background until you <code>kill</code> it or modify a file in the watched dir. This throws a <code>TCPServer Error</code> if you try to run <code>rake preview</code> a second time. Sad pandas.</p>
+
+<p>Initially I had no idea what was going on here. I've dabbled in Ruby but not modified a Rakefile before. I learned <code>ps</code> and <code>kill</code> ten years ago, but didn't know much about what was going on under the hood. Ripe conditions for learning a ton.</p>
+
+<p><strong>This is what I love about Hacker School</strong>. I have the time and space to go down these rabbit holes. At a startup, priority goes to shipping code. <strong>Here, shipping code is the means, not the end</strong></p>
+
+<p>In the end, the actual bug was pretty small: when you interrupt <code>rake</code>, it passes <code>kill 9</code> to guard. Guard ends itself but doesn't properly terminate its child process fsevent`.</p>
+
+<p>``` ruby Rake preview catching interrupts
+  trap("INT") {</p>
+
+<pre><code>[guardPid, rackupPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+exit 0
+</code></pre>
+
+<p>  }
+```</p>
+
+<p>This can be duct-taped together by sending <code>3</code> (QUIT) instead of <code>9</code> to Guard, but we're asking the Guard team if this is a known issue. But it gets better!</p>
+
+<h2>Curiouser and curiouser</h2>
+
+<p>Things got <em>really</em> weird when I was playing around with the different exit codes. The Ruby documentation says that if you pass <code>kill</code> a negative argument, it will kill the entire group of processes, not just the child process. Promising!</p>
+
+<p>However, it broke very spectacularly. If you want to follow along, grab the development branch of Octopress, currently 2.1:</p>
+
+<pre><code>$ git clone -b 2.1 https://github.com/imathis/octopress.git
+</code></pre>
+
+<p>Find the <code>preview</code> task and change the message it passes on interrupt from 9 to -3:</p>
+
+<p>``` ruby Line 161 as of this writing
+  trap("INT") {</p>
+
+<pre><code>[guardPid, rackupPid].each { |pid| Process.kill(-3, pid) rescue Errno::ESRCH }
+exit 0
+</code></pre>
+
+<p>  }
+```</p>
+
+<p>Then run <code>rake preview</code> (you will have to run <code>rake install</code> the first time). Wait until you see Guard's prompt:</p>
+
+<pre><code>16:10:05 - INFO - Guard is now watching at '/Users/sasha/code/octopress'
+[1] guard(main)&gt; 
+</code></pre>
+
+<p>Then Control-C. You will see some lines of error output, and then BOTH guard and bash's prompt. Wat!</p>
+
+<pre><code>[2] guard(main)&gt; SASHAs-MacBook-Air-2:octopress sasha$ 
+</code></pre>
+
+<p>Weird! Press any key that sends input. PRY EXPLODES. Press enter and you get a bash prompt back, but now you can't see anything you type. It's still getting to bash (try <code>ls &lt;enter&gt;</code>) but some things, like control-L, no longer work.</p>
+
+<p>Lolwut?</p>
+
+<h2>Down the rabbit hole</h2>
+
+<p>So I started reading about <a href="http://www.linusakesson.net/programming/tty/">TTY</a> and <a href="http://en.wikipedia.org/wiki/Unix_signal">POSIX signals</a> and using <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?stty">stty</a>. Interesting stuff, particularly the history of our terminal evolving from ticker tape outputs.</p>
+
+<p>You can also change all sorts of wacky things about your terminal with <code>stty</code>. Try <code>stty -echo</code> (<code>stty echo</code> to undo it). This explains why I wasn't able to see my own typing after the Pry explosion - when control was reluctantly handed back to bash, the flags on my terminal weren't properly reset, including the flag to use raw (non-canonical) input processing, which is why it won't process things like <code>control-l</code> until you hit enter.</p>
+
+<p>I didn't find all the answers in my reading, but I'm asking <em>significantly</em> better questions:</p>
+
+<ul>
+<li><p>How groups are being used is unclear. I expected the process group to inherit its gid from the parent process and to be killed cleanly by passing a negative argument to <code>kill</code>, but that didn't work. Passing <code>-3</code> kills Rack but only mortally wounds Guard.</p></li>
+<li><p>One remaining mystery: why is the bash prompt printed to the terminal after the Guard prompt when Guard is still running? Maybe control is passed from Guard to bash and then back to Guard?</p></li>
+<li><p>It seems that Pry is getting something unexpected from its stdin, which triggers its explosion, which may or may not be coming from bash. But how to intercept it?</p></li>
+<li><p>The Readlines library defines some bash shortcuts, like mapping <code>ctrl-l</code> to <code>clear</code>, but lets you override them with an .inputrc. So you can do awesome things to your prompt like adjusts how <code>ctrl-w</code> works. There are also vim and emacs modes for bash.</p></li>
+</ul>
+
+
+<p><strong>Stuff I learned:</strong> a little Ruby, Rakefiles, POSIX signals, the history of TTY, more about stdin, stdout, and stderr, stty, working with pids, gids, and the Process module in Ruby. And my first accepted (albeit one-character) pull request of Hacker School, which is certainly the highest learning-to-LOC ratio I can think of.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://sursh.github.com/blog/2013/03/04/in-search-of-funny-gibberish/</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks/</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://sursh.github.com/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters/
+        </loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/blog/2013/03/11/turbocharging-octopress/</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/blog/archives/</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/robots.txt</loc>
+        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+</urlset>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Sasha Laundy]]></title>
+  <link href="http://sursh.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://sursh.github.com/"/>
+  <updated>2013-03-27T16:03:11-04:00</updated>
+  <id>http://sursh.github.com/</id>
+  <author>
+    <name><![CDATA[Sasha Laundy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Turbocharging Octopress]]></title>
+    <link href="http://sursh.github.com/blog/2013/03/11/turbocharging-octopress/"/>
+    <updated>2013-03-11T19:05:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2013/03/11/turbocharging-octopress</id>
+    <content type="html"><![CDATA[<p>This blog is powered by <a href="http://octopress.org/">Octopress</a>, which is basically a set of <code>rake</code> tasks, themes, and other add-ons generate a blog from Markdown posts. It's in turn powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</p>
+
+<p>The documentation is generally pretty good, but they didn't really explain one fundamental thing. It's pretty simple once you dig into the <code>Rakefile</code>, but here's a quick explanation if you just want to get up and running.</p>
+
+<h3>WTF is going on with the branches?</h3>
+
+<p>On github, you will have two branches: <code>source</code> and <code>master</code>. But locally:</p>
+
+<p><code>
+$ git br
+* source
+</code></p>
+
+<p>Huh. Interesting. Locally, you <em>only</em> have one branch: <code>source</code>.  Wat?</p>
+
+<p>Basically, <code>source</code> holds your posts in Markdown and other files <em>before</em> they are transmogrified into HTML. Once you run <code>rake generate</code>, Octopress will generate all the HTML &amp; CSS and put it all in <code>/public</code>.</p>
+
+<p>And when you run <code>rake deploy</code>, Octopress pushes the contents of <code>/public</code> (on <em>local</em> branch <code>source</code>) to the home directory (on <em>remote</em> branch <code>master</code>).</p>
+
+<p>So: each time you finish a post, run BOTH <code>rake deploy</code> to deploy and <code>git push origin source</code> to back up your source files to github.</p>
+
+<h3>Sublime Text &lt;3 Markdown</h3>
+
+<p>So you're writing your blog posts in Markdown like a boss. There are a few things you can do to make Sublime Text 2 a lean, mean blogging machine:</p>
+
+<p><strong>Custom themes</strong>. For example, <a href="http://brettterpstra.com/2012/05/17/markdown-editing-for-sublime-text-2-humble-beginnings/">MarkdownEditing</a>, a series of custom themes and shortcuts for Markdown. (Hint: installing Package Control first will make this easier)</p>
+
+<p><strong>Spell check.</strong>
+Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.html">Hunspell</a> for spell checking, the same library used in Word. This process was a bit more convoluted:</p>
+
+<ol>
+<li>Command-shift-p in ST2 to open Package Control</li>
+<li>Choose "Add Repo". Paste in <code>http://www.sublimetext.com/docs/2/spell_checking.html</code></li>
+<li>Command-shift-p again. Choose "Install Package," then "Dictionaries"</li>
+<li>Find your preferences in Preferences > Package Settings > Markdown Editing > Markdown Settings - User</li>
+<li>Add the following to the settings file:
+
+<pre><code> "spell_check": true,
+ "dictionary": "Packages/Language - English/en_US.dic"
+</code></pre></li>
+<li>Restart Sublime Text. Observe red squigglies when you edit Markdown.</li>
+<li>Profit</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
