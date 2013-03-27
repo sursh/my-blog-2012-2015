@@ -4,7 +4,7 @@
   <title><![CDATA[Category: unix | Sasha Laundy]]></title>
   <link href="http://sursh.github.com/blog/categories/unix/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2013-03-27T16:03:11-04:00</updated>
+  <updated>2013-03-27T19:00:05-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -40,7 +40,7 @@ $ pstree
 
 <p>Initially I had no idea what was going on here. I've dabbled in Ruby but not modified a Rakefile before. I learned <code>ps</code> and <code>kill</code> ten years ago, but didn't know much about what was going on under the hood. Ripe conditions for learning a ton.</p>
 
-<p><strong>This is what I love about Hacker School</strong>. I have the time and space to go down these rabbit holes. At a startup, priority goes to shipping code. <strong>Here, shipping code is the means, not the end</strong></p>
+<p><strong>This is what I love about Hacker School</strong>. I have the time and space to go down these rabbit holes. At a startup, priority goes to shipping code. <strong>Here, shipping code is the means, not the end.</strong></p>
 
 <p>In the end, the actual bug was pretty small: when you interrupt <code>rake</code>, it passes <code>kill 9</code> to guard. Guard ends itself but doesn't properly terminate its child process fsevent`.</p>
 
@@ -54,7 +54,7 @@ exit 0
 <p>  }
 ```</p>
 
-<p>This can be duct-taped together by sending <code>3</code> (QUIT) instead of <code>9</code> to Guard, but we're asking the Guard team if this is a known issue. But it gets better!</p>
+<p>This can be duct-taped together by sending <code>3</code> (QUIT) instead of <code>9</code> (KILL) to Guard, but we're asking the Guard team if this is a known issue. But it gets better!</p>
 
 <h2>Curiouser and curiouser</h2>
 
@@ -77,13 +77,13 @@ exit 0
 <p>  }
 ```</p>
 
-<p>Then run <code>rake preview</code> (you will have to run <code>rake install</code> the first time). Wait until you see Guard's prompt:</p>
+<p>Then run <code>rake preview</code> (you will have to run <code>rake install</code> the first time). Wait until you see Guard's prompt (powered by Pry):</p>
 
 <pre><code>16:10:05 - INFO - Guard is now watching at '/Users/sasha/code/octopress'
 [1] guard(main)&gt; 
 </code></pre>
 
-<p>Then Control-C. You will see some lines of error output, and then BOTH guard and bash's prompt. Wat!</p>
+<p>Then Control-C. You will see some lines of error output, and then BOTH guard and bash's prompt, instead of one or the other. Wat!</p>
 
 <pre><code>[2] guard(main)&gt; SASHAs-MacBook-Air-2:octopress sasha$ 
 </code></pre>
