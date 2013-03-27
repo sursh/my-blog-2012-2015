@@ -28,7 +28,7 @@ But when you `crtl-C`, Fsevent stays running in the background until you `kill` 
 
 Initially I had no idea what was going on here. I've dabbled in Ruby but not modified a Rakefile before. I learned `ps` and `kill` ten years ago, but didn't know much about what was going on under the hood. Ripe conditions for learning a ton. 
 
-**This is what I love about Hacker School**. I have the time and space to go down these rabbit holes. At a startup, priority goes to shipping code. **Here, shipping code is the means, not the end**
+**This is what I love about Hacker School**. I have the time and space to go down these rabbit holes. At a startup, priority goes to shipping code. **Here, shipping code is the means, not the end.**
 
 In the end, the actual bug was pretty small: when you interrupt `rake`, it passes `kill 9` to guard. Guard ends itself but doesn't properly terminate its child process fsevent`. 
 
@@ -39,7 +39,7 @@ In the end, the actual bug was pretty small: when you interrupt `rake`, it passe
   }
 ```
 
-This can be duct-taped together by sending `3` (QUIT) instead of `9` to Guard, but we're asking the Guard team if this is a known issue. But it gets better! 
+This can be duct-taped together by sending `3` (QUIT) instead of `9` (KILL) to Guard, but we're asking the Guard team if this is a known issue. But it gets better! 
 
 ## Curiouser and curiouser
 
@@ -58,12 +58,12 @@ Find the `preview` task and change the message it passes on interrupt from 9 to 
   }
 ```
 
-Then run `rake preview` (you will have to run `rake install` the first time). Wait until you see Guard's prompt:
+Then run `rake preview` (you will have to run `rake install` the first time). Wait until you see Guard's prompt (powered by Pry):
 
     16:10:05 - INFO - Guard is now watching at '/Users/sasha/code/octopress'
     [1] guard(main)> 
 
-Then Control-C. You will see some lines of error output, and then BOTH guard and bash's prompt. Wat!
+Then Control-C. You will see some lines of error output, and then BOTH guard and bash's prompt, instead of one or the other. Wat!
 
     [2] guard(main)> SASHAs-MacBook-Air-2:octopress sasha$ 
 

@@ -9,8 +9,6 @@ published: false
 
 Hacker School is short! It's just 12 precious weeks. I'm very conscious of making the most of my time here. One strategy I'm trying out is ["only touch it once"](https://www.google.com/search?q=only+touch+it+once&aq=f&oq=only+touch+it+once) from handling email. 
 
-{% img right http://placekitten.com/300/500 150 250 'Place Kitten #4' 'An image of a very cute kitten' %}
-
 of your time here. basic tenet of productivity is only touch it once. link to zenhabits. likewise, you should only learn it once. 
 
 programming hash some big concepts and skill,s but also has tons of minutia. thaty  udon't use every day, but really lslow you down if you have to look them up every time. wouldn't it be cool to learn them toh first time you see them?
