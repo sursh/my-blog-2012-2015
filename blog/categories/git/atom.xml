@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Sasha Laundy]]></title>
+  <link href="http://sursh.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://sursh.github.com/"/>
+  <updated>2013-04-01T18:53:51-04:00</updated>
+  <id>http://sursh.github.com/</id>
+  <author>
+    <name><![CDATA[Sasha Laundy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Turn on Git's Autocomplete]]></title>
+    <link href="http://sursh.github.com/blog/2013/04/01/autocomplete-in-git/"/>
+    <updated>2013-04-01T18:39:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2013/04/01/autocomplete-in-git</id>
+    <content type="html"><![CDATA[<p><strong>Did you know that you can turn on autocomplete for git?</strong> A quick survey of other Hacker Schoolers turned up that most Linux distros come with this built in, but most Mac users didn't have it installed.</p>
+
+<p><img src="http://i2.kym-cdn.com/entries/icons/original/000/000/248/underpants.jpg" title="Underpants Gnomes Business Plan" ></p>
+
+<ol>
+<li>Streamline your tools</li>
+<li>Save time</li>
+<li>Profit!</li>
+</ol>
+
+
+<p>It's super easy. Put <a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">git's autocomplete script</a> in your home directory. Then add it to your .bashrc by running <code>source ~/.git-completion.bash</code>.</p>
+
+<p>There's more detail <a href="http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks">here</a>, along with aliases, which are a MUST. I added <code>git unstage FILENAME</code> which I find much more intuitive than <code>git reset HEAD -- FILENAME</code>. Hooray!</p>
+
+<p>Part of my morning routine here at <a href="http://hackerschool.com">Hacker School</a> is learning a few new things about Python, bash, and git, since in the long run, <strong>knowing these tools like the back of my hand saves tons of time</strong>.</p>
+
+<p>Let me know on <a href="http://twitter.com/sashalaundy">Twitter</a>/Humbug if you want to hear more about this routine.</p>
+]]></content>
+  </entry>
+  
+</feed>

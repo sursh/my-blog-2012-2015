@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: unix - Sasha Laundy</title>
+  <title>Turn on Git's Autocomplete - Sasha Laundy</title>
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="Category: unix">
+  <meta name="description" content="Did you know that you can turn on autocomplete for git? A quick survey of other Hacker Schoolers turned up that most Linux distros come with this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sursh.github.com/blog/categories/unix/">
+  <link rel="canonical" href="http://sursh.github.com/blog/2013/04/01/autocomplete-in-git/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -63,35 +63,101 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Unix</h1>
+    
+      <h1 class="entry-title">Turn on Git's Autocomplete</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-01T18:39:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p><strong>Did you know that you can turn on autocomplete for git?</strong> A quick survey of other Hacker Schoolers turned up that most Linux distros come with this built in, but most Mac users didn&#8217;t have it installed.</p>
 
-  
-  <h2>2013</h2>
+<p><img src="http://i2.kym-cdn.com/entries/icons/original/000/000/248/underpants.jpg" title="Underpants Gnomes Business Plan" ></p>
 
-<article>
-  
-<h1><a href="/blog/2013/03/25/on-rakefiles-and-rabbit-holes/">On Rakefiles and Rabbit Holes</a></h1>
-<time datetime="2013-03-25T15:34:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>25</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/hackerschool/'>hackerschool</a>, <a class='category' href='/blog/categories/unix/'>unix</a></span>
-</footer>
+<ol>
+<li>Streamline your tools</li>
+<li>Save time</li>
+<li>Profit!</li>
+</ol>
 
 
-</article>
+<p>It&#8217;s super easy. Put <a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">git&#8217;s autocomplete script</a> in your home directory. Then add it to your .bashrc by running <code>source ~/.git-completion.bash</code>.</p>
 
+<p>There&#8217;s more detail <a href="http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks">here</a>, along with aliases, which are a MUST. I added <code>git unstage FILENAME</code> which I find much more intuitive than <code>git reset HEAD -- FILENAME</code>. Hooray!</p>
+
+<p>Part of my morning routine here at <a href="http://hackerschool.com">Hacker School</a> is learning a few new things about Python, bash, and git, since in the long run, <strong>knowing these tools like the back of my hand saves tons of time</strong>.</p>
+
+<p>Let me know on <a href="http://twitter.com/sashalaundy">Twitter</a>/Humbug if you want to hear more about this routine.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Sasha Laundy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-01T18:39:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2013/04/01/autocomplete-in-git/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2013/04/01/autocomplete-in-git/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/26/demo-code-review/" title="Previous Post: Demo code review">&laquo; Demo code review</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

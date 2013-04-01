@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="A big part of life at Hacker School is code reviews. Facilitators review code but for the most part, it&#8217;s our super talented peers. Getting &hellip;">
+  <meta name="description" content="Did you know that you can turn on autocomplete for git? A quick survey of other Hacker Schoolers turned up that most Linux distros come with this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +70,59 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/04/01/autocomplete-in-git/">Turn on Git&#8217;s Autocomplete</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-01T18:39:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Did you know that you can turn on autocomplete for git?</strong> A quick survey of other Hacker Schoolers turned up that most Linux distros come with this built in, but most Mac users didn&#8217;t have it installed.</p>
+
+<p><img src="http://i2.kym-cdn.com/entries/icons/original/000/000/248/underpants.jpg" title="Underpants Gnomes Business Plan" ></p>
+
+<ol>
+<li>Streamline your tools</li>
+<li>Save time</li>
+<li>Profit!</li>
+</ol>
+
+
+<p>It&#8217;s super easy. Put <a href="https://github.com/git/git/blob/master/contrib/completion/git-completion.bash">git&#8217;s autocomplete script</a> in your home directory. Then add it to your .bashrc by running <code>source ~/.git-completion.bash</code>.</p>
+
+<p>There&#8217;s more detail <a href="http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks">here</a>, along with aliases, which are a MUST. I added <code>git unstage FILENAME</code> which I find much more intuitive than <code>git reset HEAD -- FILENAME</code>. Hooray!</p>
+
+<p>Part of my morning routine here at <a href="http://hackerschool.com">Hacker School</a> is learning a few new things about Python, bash, and git, since in the long run, <strong>knowing these tools like the back of my hand saves tons of time</strong>.</p>
+
+<p>Let me know on <a href="http://twitter.com/sashalaundy">Twitter</a>/Humbug if you want to hear more about this routine.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/03/26/demo-code-review/">Demo Code Review</a></h1>
     
     
@@ -93,7 +146,7 @@
   </header>
 
 
-  <div class="entry-content"><p>A big part of life at <a href="http://hackerschool.com">Hacker School</a> is code reviews. Facilitators review code but for the most part, it&#8217;s our super talented peers.</p>
+  <div class="entry-content"><p>A big part of life at <a href="http://hackerschool.com">Hacker School</a> is code reviews. Sometimes facilitators review code but for the most part, it&#8217;s our super talented peers.</p>
 
 <p><strong>Getting reviewed is really valuable to accelerate learning.</strong> It points unclear parts of your code, and blind spots you didn&#8217;t know you had. In some of my projects I&#8217;ve implemented things in a brute-force way, and my reviewers have pointed me to data structures or libraries I hadn&#8217;t yet discovered that allowed me to cut out lots of code.</p>
 
@@ -661,6 +714,10 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/04/01/autocomplete-in-git/">Turn on Git&#8217;s Autocomplete</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/03/26/demo-code-review/">Demo code review</a>
       </li>
     
@@ -674,10 +731,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
     
       <li class="post">
         <a href="/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters/">Crashing Heroku (or When Memory Management in Python Really Matters)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/05/help-us-plug-our-memory-leaks/">Help us plug our memory leaks</a>
       </li>
     
   </ul>
