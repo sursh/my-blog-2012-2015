@@ -6,7 +6,7 @@ comments: true
 categories: hackerschool
 ---
 
-A big part of life at [Hacker School](http://hackerschool.com) is code reviews. Facilitators review code but for the most part, it's our super talented peers. 
+A big part of life at [Hacker School](http://hackerschool.com) is code reviews. Sometimes facilitators review code but for the most part, it's our super talented peers. 
 
 **Getting reviewed is really valuable to accelerate learning.** It points unclear parts of your code, and blind spots you didn't know you had. In some of my projects I've implemented things in a brute-force way, and my reviewers have pointed me to data structures or libraries I hadn't yet discovered that allowed me to cut out lots of code.
 
