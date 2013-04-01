@@ -4,6 +4,7 @@ HOWTO.md
 .sass-cache
 .gist-cache
 .pygments-cache
+.lock
 _deploy
 public
 sass.old
