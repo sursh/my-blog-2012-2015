@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Turn on Git's Autocomplete"
+title: "Git + Autocomplete = Bliss"
 date: 2013-04-01 18:39
 comments: true
 categories: [git]
