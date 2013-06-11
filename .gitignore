@@ -3,9 +3,11 @@ HOWTO.md
 .DS_Store
 .sass-cache
 .gist-cache
+.preview-mode
 .pygments-cache
 .lock
 _deploy
+Gemfile.lock
 public
 sass.old
 source.old
