@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to Get the Most out of Hacker School (and Life)"
+title: "How to Get the Most out of Hacker School"
 date: 2013-05-30 18:52
 comments: true
 categories: [hackerschool]
