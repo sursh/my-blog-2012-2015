@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hackerschool | Sasha Laundy]]></title>
   <link href="http://sursh.github.com/blog/categories/hackerschool/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2013-06-11T17:53:24-04:00</updated>
+  <updated>2013-06-11T17:57:41-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -21,6 +21,54 @@
     <content type="html"><![CDATA[<p>We were having some great conversations about fellow Hacker Schoolers' blog posts in Humbug, but that channel is too high-volume for most alums.</p>
 
 <p>Enter: Comments! The Hacker School community can now privately discuss blog posts in a pretty interface with a high signal-to-noise ratio. <a href="http://blaggregator.herokuapp.com">Check it out</a> (Hacker School login required).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Get the Most out of Hacker School]]></title>
+    <link href="http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/"/>
+    <updated>2013-05-30T18:52:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school</id>
+    <content type="html"><![CDATA[<p>Monday is the first day of the summer batch of <a href="http://hackerschool.com">Hacker School</a>. You and about 70 other bright-eyed and bushy-tailed programmers will be starting twelve amazing weeks together.</p>
+
+<p>In addition to the excellent advice that Dave and Nick will give you on day one, here are some ideas to help you get the most out of this awesome experience.</p>
+
+<p><a href="https://medium.com/i-m-h-o/ab08782397f8/">Read the rest of the post on Medium...</a></p>
+
+<!--
+## Know what you want
+You are in Hacker School because you love programming and want to get radically better, but what does that mean, exactly? What skills do you want to leave with? Do you want to go in depth on the fundamentals? Learn a new class of languages? Get comfortable writing bigger apps?
+
+If you don’t have this figured out on day one, that’s OK, but move aggressively to figure it out so you know what projects to pick. Ask other people what they’re working on. Talk to a facilitator. No one will hand you a roadmap here, but they will help you write your own if you ask.
+
+## Maximize your learning per hour
+Hacker School is this weird wonderful oasis in your life trajectory where you have no deliverables and no responsibilities to ship code for someone else. Your top priority is becoming a better programmer, so make decisions that maximize your learning per hour (LPH).
+
+Pick projects you have no idea how to do. Investigate non-critical but interesting bugs. Get enough sleep, install Self Control, or do whatever you need to do to sit down and just start coding. Twelve weeks is short. Use each day wisely.
+
+## See the forest for the trees
+There’s so much happening every day at Hacker School that it is easy to get caught up in a project that drags on for too long. When your LPH gets low, wrap up the project. It doesn’t have to be done for you to be done with it.
+
+Three months is really short, but that word “months” is just heavy enough that you feel like you have all the time in the world, so it’s easy to take your time and move slowly. Set up smaller milestones—every two weeks worked nicely for me—and check in. Are you where you wanted to be after two weeks? Keep your eye on the big picture.
+
+## People are amazing resources
+A wonderful thing about Hacker School is the diversity. And I don’t just mean 35% women, 25% people of color, and 15% international folks, even though those numbers are astounding in the technical community.
+
+Hacker School brings together people who are all at a crossroads in their life. You are united by loving programming and wanting to get better at it, but other than that everyone is all over the map. Some have been programming professionally for years. Some have been working in international espionage. Some love kiteboarding. Some have startup experience, others have worked at big companies. Find out what the people around you know and ask them lots and lots of questions.
+
+That goes for the residents too. Google them before they arrive to get some good question ideas. When they arrive, they’ll be eager to pair and talk about code, but also happy to share the story of their life’s work.
+
+Don’t just limit this to Hacker School. Talk actively to the programmers in your life about what you’re working on. They’ll have an interesting perspective. No programmers in your life yet? Go to meetups in NYC and say hi. If you meet someone you like, get their info and keep in touch with them.
+
+## All feedback all the time
+Get all your code reviewed. Ask for feedback on your presentations. Check that you chose a good project before you get started. Ask for suggestions from the people you pair with. You won’t get this unless you ask for it, and if you ask you will get better so, so much faster.
+
+If you don’t come away from the conversation with something concrete to change or try differently next time, invite them to be brutally honest. They may be holding back to spare your feelings! We, as a society, suck at teaching people to give negative feedback in a supportive way and it makes a lot of people nervous.
+
+Above all: have fun, learn lots, and never graduate.
+
+-->
+
 ]]></content>
   </entry>
   
@@ -194,175 +242,6 @@ exit 0
 <h4>Stuff I learned along the way:</h4>
 
 <p> Generators, classes and methods in python, pickle, regex, defaultdict, Tweepy, Buffer's API, how bad the built in titlecase methods are in Python, some clever way to handle default arguments, some fundamental principles of NLP.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Help us plug our memory leaks]]></title>
-    <link href="http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks/"/>
-    <updated>2013-03-05T00:08:00-05:00</updated>
-    <id>http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks</id>
-    <content type="html"><![CDATA[<p>David and I are running our app on Heroku, but it uses too much memory to run! <strong>Got any clever optimization suggestions?</strong></p>
-
-<p>We're building a Markov chain generator that is trained on a corpus of 15MB of old Hacker News headlines. The app currently indexes the training corpus and constructs a matrix of all the possibilities, then queries that matrix to generate a hopefully entertaining new headline. Preview it <a href="http://twitter.com/HackerNewsOrNot">here</a>.</p>
-
-<p><strong>However, as we first wrote it, it used 1+ GB of memory when we deployed to Heroku, where the limit is 512 MB!</strong> We wrangled it down to 570 MB today and will tackle it again tomorrow morning, but need more ideas.</p>
-
-<p>Some things we've tried:</p>
-
-<ul>
-<li>Pickling the matrix. Not pickling the matrix. (didn't help)</li>
-<li>Storing the words as <code>int</code>s in our matrix rather than <code>string</code>s (helped)</li>
-<li>Tweaked the data structure (helped, could probably do more with this)</li>
-<li>We ran out of time, but want to try some sort of data store. Redis?</li>
-</ul>
-
-
-<p><strong>What should we try next?</strong> Our code after the jump:</p>
-
-<!-- more -->
-
-
-<p>Very unfinished code:</p>
-
-<p>``` python The code + a few half-finished experiments
-import sys
-import time
-import re
-import collections
-import numpy
-import string
-import cPickle as pickle
-import twitterclient</p>
-
-<p>class Markov(object):</p>
-
-<p>  def read(self, filename):</p>
-
-<pre><code>with open(filename) as f:
-  for line in f:
-    headline = map(intern, re.split('\s+', line.lower().strip()))
-if headline[-1] == '': del(headline[-1]) # clear lingering null entries
-if headline[0] == '': del(headline[0])
-    yield ['^'] + headline + ['$']
-</code></pre>
-
-<p>  def generateTrigrams(self, tokens):</p>
-
-<pre><code>''' Create a list of tuples, where each tuple is a trigram '''
-for idx, item in enumerate(tokens[:-2]):
-  yield (item, tokens[idx+1], tokens[idx+2])
-</code></pre>
-
-<p>  def generateMatrix(self, filename):</p>
-
-<pre><code>''' Run through the list of trigrams and add them to the occurence matrix '''
-
-self.matrix = {}
-self.dictionary = {}
-
-try: # load as pickle
-
-  with open('matrix.p', 'rb') as f:
-    self.matrix = pickle.load(f)
-
-except: # interpret file as newline separated headlines
-
-  print 'reading headlines'
-  headlines = self.read(filename)
-
-  for headline in headlines:
-
-    trigrams = self.generateTrigrams(headline)
-
-    for first_word, second_word, third_word in trigrams:
-      self.dictionary.setdefault(first_word, len(self.dictionary))
-      self.dictionary.setdefault(second_word, len(self.dictionary))
-      self.dictionary.setdefault(third_word, len(self.dictionary))
-
-    trigrams = self.generateTrigrams(headline)
-
-    for first_word, second_word, third_word in trigrams:
-      first_word  = self.dictionary[first_word]
-      second_word = self.dictionary[second_word]
-      third_word  = self.dictionary[third_word]
-
-      self.matrix.setdefault( (first_word, second_word), collections.defaultdict(int)) 
-      self.matrix[(first_word, second_word)][third_word] += 1
-
-  print sum(len(d) for d in self.matrix.itervalues())
-  #print("DUMPING %d" % len(self.matrix))
-  #pickle.dump(self.matrix, open("matrix.p", "wb"))
-</code></pre>
-
-<p>  def generateNextWord(self, prev_word, current_word):</p>
-
-<pre><code>conditional_words = self.matrix[ (prev_word, current_word) ]
-words, counts = zip(*conditional_words.items())
-
-# pick one of the possibilities, with probability weighted by frequency in training corpus
-cumcounts = numpy.cumsum(counts)
-coin = numpy.random.randint(cumcounts[-1])
-for index, item in enumerate(cumcounts):
-  if item &gt; coin:
-    return words[index]
-</code></pre>
-
-<p>  def generateParagraph(self, seed2 = 'i', seed1 = '<sup>',):</sup></p>
-
-<pre><code>seed1 = self.dictionary[seed1]
-seed2 = self.dictionary[seed2]
-
-prev_word = seed1
-current_word = seed2
-paragraph = [ seed1 ]
-
-while (self.dictionary[current_word] != '$' and len(paragraph) &lt; 20): 
-  paragraph.append(current_word)
-  prev_word, current_word = current_word, self.generateNextWord( prev_word, current_word )
-
-#paragraph = []
-paragraph = ' '.join(paragraph[1:])  # strip off leading caret
-return string.capwords(paragraph)
-</code></pre>
-
-<p>  def <strong>str</strong>(self):</p>
-
-<pre><code>s = ''
-for word, cfd in self.matrix.iteritems():
-  for word2, count in cfd.iteritems():
-    s += '%s %s: %d\n' % (word, word2, count)
-return s
-</code></pre>
-
-<p>def main():</p>
-
-<p>  if len(sys.argv) != 2:</p>
-
-<pre><code>print 'usage: ./markov.py inputFile'
-sys.exit(1)
-</code></pre>
-
-<p>  filename = sys.argv[1]</p>
-
-<p>  m = Markov()
-  m.generateMatrix(filename)</p>
-
-<p>  while True:</p>
-
-<pre><code>tweet = m.generateParagraph('how') # todo: new seed
-break
-if len(tweet) &lt; 120:
-  break
-</code></pre>
-
-<p>  print("Tweeting %s" % tweet)
-  twitterclient.postTweet(tweet)</p>
-
-<p>if <strong>name</strong> == '<strong>main</strong>':
-  main()</p>
-
-<p>```</p>
 ]]></content>
   </entry>
   
