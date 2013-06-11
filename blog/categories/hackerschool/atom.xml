@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hackerschool | Sasha Laundy]]></title>
   <link href="http://sursh.github.com/blog/categories/hackerschool/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2013-05-30T17:49:31-04:00</updated>
+  <updated>2013-06-11T16:35:48-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Blaggregator now has comments!]]></title>
+    <link href="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/"/>
+    <updated>2013-06-11T15:40:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash</id>
+    <content type="html"><![CDATA[<p>We were having some great conversations about fellow Hacker Schoolers' blog posts in Humbug, but that channel is too high-volume for most alums.</p>
+
+<p>Enter: Comments! The Hacker School community can now privately discuss blog posts in a pretty interface with a high signal-to-noise ratio. <a href="http://blaggregator.herokuapp.com">Check it out</a> (Hacker School login required).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to Get the Most out of Hacker School (and Life)]]></title>
+    <link href="http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school-or-anything/"/>
+    <updated>2013-05-30T18:52:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school-or-anything</id>
+    <content type="html"><![CDATA[<p>Monday is the first day of the summer batch of <a href="http://hackerschool.com">Hacker School</a>. You and ~70 other bright-eyed and bushy-tailed programmers will be starting twelve amazing weeks together.</p>
+
+<p>In addition to the excellent advice that Dave and Nick will give you on day one, here are some ideas to help you get the most out of this awesome experience. But really, these are useful to keep in mind to improve rapidly in any type of work.</p>
+
+<h2>Know what you want</h2>
+
+<p>You are in Hacker School because you love programming and want to get radically better, but what does that mean, exactly? What skills do you want to leave with? Do you want to go in depth on the fundamentals? Learn a new class of languages? Get comfortable writing bigger apps?</p>
+
+<p>If you don't have this figured out on day one, that's OK, but move aggressively to figure it out so you know what projects to pick. Ask other people what they're working on. Talk to a facilitator. No one will hand you a roadmap here, but they will help you write your own if you ask.</p>
+
+<h2>Maximize your learning per hour</h2>
+
+<p>Hacker School is this weird wonderful oasis in your life trajectory where you have no deliverables and no responsibilities to ship code for someone else. Your top priority is becoming a better programmer, so make decisions that maximize your learning per hour (LPH).</p>
+
+<p>Pick projects you have <em>no idea</em> how to do. <a href="http://blog.sashalaundy.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/">Investigate trivial but interesting bugs</a>. Get enough sleep, install <a href="http://selfcontrolapp.com/">Self Control</a>, or do whatever you need to do to sit down and <em>just start coding</em>. Twelve weeks is short. Use each day wisely.</p>
+
+<h2>See the forest for the trees</h2>
+
+<p>There's so much happening every day at Hacker School that it is easy to get caught up in a project that drags on for too long. When your LPH gets low, wrap up the project. <em>It</em> doesn't have to be done for you to be done <em>with it</em>.</p>
+
+<p>Three months is really short, but that word "months" is just heavy enough that you feel like you have all the time in the world, so it's easy to take your time and move slowly. Set up smaller milestones—every two weeks worked nicely for me—and check in. Are you where you wanted to be after two weeks? Keep your eye on the big picture.</p>
+
+<h2>People are awesome resources</h2>
+
+<p>A wonderful thing about Hacker School is the diversity. And I don't just mean 40% women, 40% people of color, and a high percentage of international folks, even though those numbers are astounding in the technical community.</p>
+
+<p>Hacker School brings together people who are all at a crossroads in their life. You are united by loving programming and wanting to get better at it, but other than that everyone is all over the map. Some have been programming professionally for years. Some have been working in international espionage. Some love kiteboarding. Some have startup experience, others have worked at big companies. Find out what the people around you know and ask them lots and lots of questions.</p>
+
+<p>That goes for the residents too. Google them before they arrive to get some good question ideas. When they arrive, they'll be eager to pair and talk about code, but also happy to share the story of their life's work.</p>
+
+<p>Don't just limit this to Hacker School. Talk actively to the programmers in your life about what you're working on. They'll have an interesting perspective. No programmers in your life yet? Go to <a href="http://meetup.com">meetups</a> in NYC and say hi. If you meet someone you like, get their info and <a href="http://twitter.com">keep in touch</a> with them.</p>
+
+<h2>All feedback all the time</h2>
+
+<p>Get all your code reviewed. Ask for feedback on your presentations. Check that you chose a good project before you get started. Ask for suggestions from the people you pair with. You won't get this unless you ask for it, and if you ask you will get better so, so much faster.</p>
+
+<p>If you don't come away from the conversation with something concrete to change or try differently next time, invite them to be brutally honest. They may be holding back to spare your feelings! We, as a society, suck at teaching people to give negative feedback in a supportive way and it makes a lot of people nervous.</p>
+
+<h3>Above all, have fun, learn lots, and never graduate.</h3>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Demo code review]]></title>
@@ -183,287 +241,6 @@ exit 0
 <h4>Stuff I learned along the way:</h4>
 
 <p> Generators, classes and methods in python, pickle, regex, defaultdict, Tweepy, Buffer's API, how bad the built in titlecase methods are in Python, some clever way to handle default arguments, some fundamental principles of NLP.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Help us plug our memory leaks]]></title>
-    <link href="http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks/"/>
-    <updated>2013-03-05T00:08:00-05:00</updated>
-    <id>http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks</id>
-    <content type="html"><![CDATA[<p>David and I are running our app on Heroku, but it uses too much memory to run! <strong>Got any clever optimization suggestions?</strong></p>
-
-<p>We're building a Markov chain generator that is trained on a corpus of 15MB of old Hacker News headlines. The app currently indexes the training corpus and constructs a matrix of all the possibilities, then queries that matrix to generate a hopefully entertaining new headline. Preview it <a href="http://twitter.com/HackerNewsOrNot">here</a>.</p>
-
-<p><strong>However, as we first wrote it, it used 1+ GB of memory when we deployed to Heroku, where the limit is 512 MB!</strong> We wrangled it down to 570 MB today and will tackle it again tomorrow morning, but need more ideas.</p>
-
-<p>Some things we've tried:</p>
-
-<ul>
-<li>Pickling the matrix. Not pickling the matrix. (didn't help)</li>
-<li>Storing the words as <code>int</code>s in our matrix rather than <code>string</code>s (helped)</li>
-<li>Tweaked the data structure (helped, could probably do more with this)</li>
-<li>We ran out of time, but want to try some sort of data store. Redis?</li>
-</ul>
-
-
-<p><strong>What should we try next?</strong> Our code after the jump:</p>
-
-<!-- more -->
-
-
-<p>Very unfinished code:</p>
-
-<p>``` python The code + a few half-finished experiments
-import sys
-import time
-import re
-import collections
-import numpy
-import string
-import cPickle as pickle
-import twitterclient</p>
-
-<p>class Markov(object):</p>
-
-<p>  def read(self, filename):</p>
-
-<pre><code>with open(filename) as f:
-  for line in f:
-    headline = map(intern, re.split('\s+', line.lower().strip()))
-if headline[-1] == '': del(headline[-1]) # clear lingering null entries
-if headline[0] == '': del(headline[0])
-    yield ['^'] + headline + ['$']
-</code></pre>
-
-<p>  def generateTrigrams(self, tokens):</p>
-
-<pre><code>''' Create a list of tuples, where each tuple is a trigram '''
-for idx, item in enumerate(tokens[:-2]):
-  yield (item, tokens[idx+1], tokens[idx+2])
-</code></pre>
-
-<p>  def generateMatrix(self, filename):</p>
-
-<pre><code>''' Run through the list of trigrams and add them to the occurence matrix '''
-
-self.matrix = {}
-self.dictionary = {}
-
-try: # load as pickle
-
-  with open('matrix.p', 'rb') as f:
-    self.matrix = pickle.load(f)
-
-except: # interpret file as newline separated headlines
-
-  print 'reading headlines'
-  headlines = self.read(filename)
-
-  for headline in headlines:
-
-    trigrams = self.generateTrigrams(headline)
-
-    for first_word, second_word, third_word in trigrams:
-      self.dictionary.setdefault(first_word, len(self.dictionary))
-      self.dictionary.setdefault(second_word, len(self.dictionary))
-      self.dictionary.setdefault(third_word, len(self.dictionary))
-
-    trigrams = self.generateTrigrams(headline)
-
-    for first_word, second_word, third_word in trigrams:
-      first_word  = self.dictionary[first_word]
-      second_word = self.dictionary[second_word]
-      third_word  = self.dictionary[third_word]
-
-      self.matrix.setdefault( (first_word, second_word), collections.defaultdict(int)) 
-      self.matrix[(first_word, second_word)][third_word] += 1
-
-  print sum(len(d) for d in self.matrix.itervalues())
-  #print("DUMPING %d" % len(self.matrix))
-  #pickle.dump(self.matrix, open("matrix.p", "wb"))
-</code></pre>
-
-<p>  def generateNextWord(self, prev_word, current_word):</p>
-
-<pre><code>conditional_words = self.matrix[ (prev_word, current_word) ]
-words, counts = zip(*conditional_words.items())
-
-# pick one of the possibilities, with probability weighted by frequency in training corpus
-cumcounts = numpy.cumsum(counts)
-coin = numpy.random.randint(cumcounts[-1])
-for index, item in enumerate(cumcounts):
-  if item &gt; coin:
-    return words[index]
-</code></pre>
-
-<p>  def generateParagraph(self, seed2 = 'i', seed1 = '<sup>',):</sup></p>
-
-<pre><code>seed1 = self.dictionary[seed1]
-seed2 = self.dictionary[seed2]
-
-prev_word = seed1
-current_word = seed2
-paragraph = [ seed1 ]
-
-while (self.dictionary[current_word] != '$' and len(paragraph) &lt; 20): 
-  paragraph.append(current_word)
-  prev_word, current_word = current_word, self.generateNextWord( prev_word, current_word )
-
-#paragraph = []
-paragraph = ' '.join(paragraph[1:])  # strip off leading caret
-return string.capwords(paragraph)
-</code></pre>
-
-<p>  def <strong>str</strong>(self):</p>
-
-<pre><code>s = ''
-for word, cfd in self.matrix.iteritems():
-  for word2, count in cfd.iteritems():
-    s += '%s %s: %d\n' % (word, word2, count)
-return s
-</code></pre>
-
-<p>def main():</p>
-
-<p>  if len(sys.argv) != 2:</p>
-
-<pre><code>print 'usage: ./markov.py inputFile'
-sys.exit(1)
-</code></pre>
-
-<p>  filename = sys.argv[1]</p>
-
-<p>  m = Markov()
-  m.generateMatrix(filename)</p>
-
-<p>  while True:</p>
-
-<pre><code>tweet = m.generateParagraph('how') # todo: new seed
-break
-if len(tweet) &lt; 120:
-  break
-</code></pre>
-
-<p>  print("Tweeting %s" % tweet)
-  twitterclient.postTweet(tweet)</p>
-
-<p>if <strong>name</strong> == '<strong>main</strong>':
-  main()</p>
-
-<p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[In Search of Funny Gibberish]]></title>
-    <link href="http://sursh.github.com/blog/2013/03/04/in-search-of-funny-gibberish/"/>
-    <updated>2013-03-04T17:31:00-05:00</updated>
-    <id>http://sursh.github.com/blog/2013/03/04/in-search-of-funny-gibberish</id>
-    <content type="html"><![CDATA[<p><a href="https://github.com/maxlikely">David</a> and I paired this week to build a bot that analyzes 15MB of old Hacker News and generates completely new headlines that really sound like they came from HN. You can <a href="https://twitter.com/HackerNewsOrNot">follow the Twitter bot</a> or <a href="https://github.com/sursh/markov-hacker-news">check out our code</a>.</p>
-
-<h3>Inspiration</h3>
-
-<p>I was inspired by <a href="http://www.linkedlistnyc.org/archive/issue_081.html">this Hacker News parody</a> and <a href="https://twitter.com/joedamarkov">this Twitter bot</a> to build a Markov chain generator as my warm-up project in Python.</p>
-
-<h3>A lightweight introduction to Markov chain generators</h3>
-
-<p>Markov chain generators are an interesting and dead simple way to generate a chain of anything - words, weather predictions, market simulations - anything that has happened before and can happen again.</p>
-
-<p>The chain is generated by examining the current link in the chain, picking the next link based on what typically followed the first link in the training corpus. Then, it <em>completely forgets</em> about the initial link. It chooses the third link <em>only</em> based on what generally comes after the second link. And so forth.</p>
-
-<p>So there is no history, no memory. The generator can switch between training sentences stochastically, so it can generate sentences that sound kind of like the original source, but don't necessarily make any sense, and are hopefully funny.</p>
-
-<h3>Bigrams vs trigrams</h3>
-
-<p>The first design decision to make is how much history to examine when choosing a new link in your chain. If you only go one word back, you are looking at pairs of words, or <em>bigrams</em>.</p>
-
-<p>Some sentences generated with bigrams: (please pardon that they're all seeded with 'why' - this is from an early branch)</p>
-
-<p><code>
-Why I Am I Talk About To Be Designing For The Daily Check Out Of Braid Creating False
-Why Machines Is Right Fit
-Why Nokia Partners
-Why We Doing In Siberia
-Why Are Literally Amp Chrome Opera Singer Is Coming Soon
-Why The Twitter Besides Buying Groupon Will Not Good Freely Available To Effectively Off
-Why Objective C Safer In Gears
-Why Some Sleep Deprived Brains
-Why I Like Instapaper Redesigns Foursquare Checkin Offers Readers Cause Problems And Should Set Theorists
-Why Dropbox S More Music Gear Online Teaching Ror Developers
-</code></p>
-
-<p>They are nice and random, and clearly contain the right buzzwords, but they aren't very grammatical and therefore can't be funny. <strong>Humor relies on surprise:</strong> setting up an expectation, then delivering something different. With bigrams, you never get a coherent enough sentence to generate an expectation, so no shot at being funny.</p>
-
-<p>Let's smooth out our chains by moving from bigrams to trigrams. So instead of looking at what follows a given individual word in our training corpus, we'll look at what follows a pair of words. Here are some examples - note that the grammar is significantly better and some are worth a chuckle. I particularly like 7 and 10.</p>
-
-<p><code>
-My Year Of Experience Is A Big Twist
-Engine Yard
-Mini-microsoft: Compensatory Arrangements Of Certain (microsoft) Officers
-The 12-step Landing Page
-More Webmaster Questions - Answered
-Scripting Gnu Screen
-The Full Social Network Buttons To Operate On Your Terrorist Neighbor
-Typical Tech Entrepreneur?
-The Lost Lesson Of 'free'
-Contact Lenses Are Curing The Founder's Syndrome
-</code></p>
-
-<h3>Which seed?</h3>
-
-<p>HN is at its least self conscious and most easily lampooned when doling out advice. Consider these 'how'- and 'why'-seeded sentences:</p>
-
-<p><code>
-How To Choose The Right People And The Chance To Present
-Why Javascript Is Broken
-How Do You Manage Your Startup’s Pr At Tech Startups Are Moving To Rackspace
-Why Do Organic Eggs Come In Bunches
-How Apple Is The Prevalence Of Qwerty
-Why Google Wants To Magically Transfer Gov Debt To Darwin
-How To Finance Your App From The Lhc Will See Global History Of Governments And Geeks Parse The World
-Why Are Bank Security Questions On Agile
-How To Hack The Us - So Stock Up 879.55%
-Why Computer Displays Suck For You
-</code></p>
-
-<p>When we choose a first word randomly from all the words that have ever been in headlines, we get a bigger assortment, but I think they're less funny:</p>
-
-<p><code>
-Canonical Contributes Only 1% Of Profit
-Google Uneveils New Search Results With Google's Closure Of Paid Prioritization
-What Do You Deal With Worldnow, Adds 19 Million Potential Users
-Diminishing Dead-tree Media And Mobile Computing Is A Beautiful Monster
-Ask Hn Yahoos: What Yahoo Should Do To Excel
-China Demands New Pcs Is Ruined By A Thousand Years
-Freemium: A Business Plan Competition
-Buy My Blog, Please
-Why I Am In Your Field?
-8 Tips To Considerate When Planning To Move Themselves (neural Network)
-</code></p>
-
-<p>The other drawback is that they're more likely to hit on a seed with only one possible resulting sentence, like "Buy My Blog, Please," above.</p>
-
-<p><code>bash
-$ grep -i "buy my blog" ../hnfull.txt
-Gawker media boss Nick Denton: Buy my blog, please
-</code></p>
-
-<p>If you think of the bot as walking through the possibilities, a common seed like 'how' will branch of lots of different ways, so there are many paths for the bot to walk and thus many possible sentence outcomes. A less common seed, like "scripting" will result in fewer possible paths, and more likely to just return a real headline verbatim. There were only 10 ways to finish "buy my" in our corpus of 350,000 training headlines, compared to 7,710 ways to finish "how to."</p>
-
-<h3>Raising the stakes</h3>
-
-<p>But how to make it as funny as possible? Some possible improvements:</p>
-
-<ul>
-<li><strong>Crowdsource funniness ratings</strong> (with mechanical turk or a 'hot or not' app, etc). Only tweet out the funniest headlines.</li>
-<li>Feed the funniness ratings back into the algorithm. For example, only use the <strong>funniest seeds.</strong></li>
-<li>Do <strong>semantic analysis</strong> of parts of speech in the training corpus and use them with templates. This would improve grammar but decrease spontaneity.</li>
-<li>Hire Nick and Dave to crank out <a href="http://www.linkedlistnyc.org/archive/issue_081.html">more of these</a> :)</li>
-</ul>
-
-
-<p>Any other ideas?</p>
 ]]></content>
   </entry>
   
