@@ -8,10 +8,13 @@ publish: false
 
 ---
 
-Monday is the first day of the summer batch of [Hacker School](http://hackerschool.com). You and ~70 other bright-eyed and bushy-tailed programmers will be starting twelve amazing weeks together. 
+Monday is the first day of the summer batch of [Hacker School](http://hackerschool.com). You and about 70 other bright-eyed and bushy-tailed programmers will be starting twelve amazing weeks together.
 
-In addition to the excellent advice that Dave and Nick will give you on day one, here are some ideas to help you get the most out of this awesome experience. But really, these are useful to keep in mind to improve rapidly in any type of work.
+In addition to the excellent advice that Dave and Nick will give you on day one, here are some ideas to help you get the most out of this awesome experience.
 
+[Read the rest of the post on Medium...](https://medium.com/i-m-h-o/ab08782397f8/)
+
+<!--
 ## Know what you want
 
 You are in Hacker School because you love programming and want to get radically better, but what does that mean, exactly? What skills do you want to leave with? Do you want to go in depth on the fundamentals? Learn a new class of languages? Get comfortable writing bigger apps?
@@ -48,3 +51,5 @@ If you don't come away from the conversation with something concrete to change o
 
 
 ### Above all, have fun, learn lots, and never graduate. 
+
+-->
