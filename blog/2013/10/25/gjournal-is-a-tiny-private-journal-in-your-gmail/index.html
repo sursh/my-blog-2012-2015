@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blaggregator now has comments! - Sasha Laundy</title>
+  <title>gJournal is a tiny private journal in your gMail - Sasha Laundy</title>
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="We were having some great conversations about fellow Hacker Schoolers&#8217; blog posts in Humbug, but that channel is too high-volume for most alums &hellip;">
+  <meta name="description" content="Ever have those days where you feel like you spent all day working, but you haven&#8217;t gotten anything done? But when you stop to take stock, you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/">
+  <link rel="canonical" href="http://sursh.github.com/blog/2013/10/25/gjournal-is-a-tiny-private-journal-in-your-gmail/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Blaggregator Now Has Comments!</h1>
+      <h1 class="entry-title">gJournal Is a Tiny Private Journal in Your gMail</h1>
     
     
       <p class="meta">
@@ -95,16 +95,26 @@
   
 
 
-<time datetime="2013-06-11T15:40:00-04:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time>
+<time datetime="2013-10-25T01:40:00-04:00" pubdate data-updated="true">Oct 25<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>We were having some great conversations about fellow Hacker Schoolers&#8217; blog posts in Humbug, but that channel is too high-volume for most alums.</p>
+<div class="entry-content"><p>Ever have those days where you feel like you spent all day working, but you haven&#8217;t gotten anything done? But when you stop to take stock, you actually did get tons done.</p>
 
-<p>Enter: Comments! The Hacker School community can now privately discuss blog posts in a pretty interface with a high signal-to-noise ratio. <a href="http://blaggregator.herokuapp.com">Check it out</a> (Hacker School login required).</p>
+<p>I had one of those days today. I ended the day feeling frustrated because pip was throwing a tantrum while installing matplotlib, which it&#8217;s done loads of times before just fine, thank you very much. But when I got the friendly daily prompt from [Christina&#8217;s] [changeslogged], I perked up. Taking stock, I realized I <strong><em>paste in the stuff from today</em></strong></p>
+
+<p>I&#8217;ve been getting these daily emails for quite some time and I&#8217;ve really come to love them. They provide a handy record on what I&#8217;ve done over time, they hold me accountable, and they remind me that I did in fact do good work today. Positive reinforcement is critical for building habits. I want to reward myself for good work so my lizard brain will want to do more of it.</p>
+
+<p>I want to keep doing this but was always self-conscious that I was sending my daily tasks to Christina&#8217;s app, Mailgun, and Gmail. Would like to make the footprint smaller. How about just Gmail?</p>
+
+<p>Whipped up a small script. Set it to run daily on Heroku and it will email you a prompt. And the reply-to header is set as your.email+journal@gmail.com. Set up an email filter for your emails to your.email+journal@gmail.com to skip your inbox and get the label journal, and you&#8217;ve got a great little journal archived in gmail. mailgun and heroku never see your info.</p>
+
+<p>You can use it a few other ways too: a gratitude journal to make you happier, a workout or habit tracker, and I&#8217;m sure lots of other ways too.</p>
+
+<p><a href="http://github.com/sursh/gjournal">Fork and customize this teeny tiny app on github</a>.</p>
 </div>
 
 
@@ -127,21 +137,15 @@
   
 
 
-<time datetime="2013-06-11T15:40:00-04:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time>
+<time datetime="2013-10-25T01:40:00-04:00" pubdate data-updated="true">Oct 25<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/hackerschool/'>hackerschool</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2013/10/25/gjournal-is-a-tiny-private-journal-in-your-gmail/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2013/10/25/gjournal-is-a-tiny-private-journal-in-your-gmail/" >Tweet</a>
   
   
   
@@ -150,10 +154,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/" title="Previous Post: How to Get the Most out of Hacker School">&laquo; How to Get the Most out of Hacker School</a>
+        <a class="basic-alignment left" href="/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/" title="Previous Post: Tracking an encoding bug through many applications layers">&laquo; Tracking an encoding bug through many applications layers</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/" title="Next Post: Tracking an encoding bug through many applications layers">Tracking an encoding bug through many applications layers &raquo;</a>
       
     </p>
   </footer>

@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blaggregator now has comments! - Sasha Laundy</title>
+  <title>Tracking an encoding bug through many applications layers - Sasha Laundy</title>
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="We were having some great conversations about fellow Hacker Schoolers&#8217; blog posts in Humbug, but that channel is too high-volume for most alums &hellip;">
+  <meta name="description" content="AKA How to decode HTML entities in your djago app so allison said systemat debugging is important at hacker school. [link to her blog post]. better &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/">
+  <link rel="canonical" href="http://sursh.github.com/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">Blaggregator Now Has Comments!</h1>
+      <h1 class="entry-title">Tracking an Encoding Bug Through Many Applications Layers</h1>
     
     
       <p class="meta">
@@ -95,16 +95,42 @@
   
 
 
-<time datetime="2013-06-11T15:40:00-04:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time>
+<time datetime="2013-07-28T17:02:00-04:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>We were having some great conversations about fellow Hacker Schoolers&#8217; blog posts in Humbug, but that channel is too high-volume for most alums.</p>
+<div class="entry-content"><p>AKA How to decode HTML entities in your djago app</p>
 
-<p>Enter: Comments! The Hacker School community can now privately discuss blog posts in a pretty interface with a high signal-to-noise ratio. <a href="http://blaggregator.herokuapp.com">Check it out</a> (Hacker School login required).</p>
+<p>so allison said systemat debugging is important at hacker school. [link to her blog post]. better than randomly changing things. fuzzy feeling, dig into it to understand underlying concepts. benefit: learn those concetps. ANd your instincts get better for new problems.</p>
+
+<p>having this bug:
+link to his blog post with chars
+show screenshot—chars appear as html entities. wat?</p>
+
+<p>a few layers:</p>
+
+<p>wordpress feed -> feedparser -> feedergrabber (by dpb) -> crawlposts -> db -> django view -> browser rendering html.</p>
+
+<p>could be a problem at any of those layers! what if my db isn&#8217;t using unicode?? etc.</p>
+
+<p>i&#8217;ve heard of encoding but didn&#8217;t really understand it. heard of ascii and unicode and knew ascii is older and has a smaller charset, and that&#8217;s it. Read joel&#8217;s [extremely entertaining] blog post on encoding.</p>
+
+<p>confirmed that encoding wsan&#8217;t the issue as we were&#8217;nt getting question marks, etc. also type(title) confirmed that the strings were unicode, as expected. had stuff that looked like HTML entities, which solve the problem of displaying the char &#8217;<a>&#8217; on a website instead of the browser interpreting that as a link.</p>
+
+<p>but where in that chain are they getting HTML encoded into entities? I started at crawlposts and worked my way backwards. at each level, had HTML entities. even looked at how wordpress generates title,s [link to CDATA info].</p>
+
+<p>so, wordpress is handing us htmlentities. tihs is acutally a really good idea, because it stops injection of malicious code. what if david had listened to the devil on his shoulder and titled his blog post &#8217;<script>somethingbad()</script>&#8217;?</p>
+
+<p>so, wordpress is handing us htmlentities, which is actually a good idea. we need to handle them on our end. a little googling lead me to an undocumented method HTMLParser, which takes entities and puts them back into HTML.</p>
+
+<p>but is that safe?? what abotu Evil David? Django is a step ahead of us. Jacob Kaplan-Moss, creater of django, spoke to us at hacker school and told us about the design decision to escape chars by default so you wouldn&#8217;t forget. [power of defaults]. to play with this, changed the title in the DB to <script>alert('thotuh')</script> but was foiled. Displayed as literals. you can see this in the [page source]. note: confused for a bit because the Inspect Element in chrome renders those escaped chars. so i went down a wrong path trying to figure out why HTML wasn&#8217;t rendering tags nested inside <a> elements. It does. Thanks, Obama.</p>
+
+<p>So, long story short, I&#8217;m going to decode the HTML entities with HTMLParser and pass them into Django whose templating language will escape them properly.</p>
+
+<p>[screenshot of successful result]</p>
 </div>
 
 
@@ -127,21 +153,15 @@
   
 
 
-<time datetime="2013-06-11T15:40:00-04:00" pubdate data-updated="true">Jun 11<span>th</span>, 2013</time>
+<time datetime="2013-07-28T17:02:00-04:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/hackerschool/'>hackerschool</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/" >Tweet</a>
   
   
   
@@ -150,10 +170,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/" title="Previous Post: How to Get the Most out of Hacker School">&laquo; How to Get the Most out of Hacker School</a>
+        <a class="basic-alignment left" href="/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/" title="Previous Post: Blaggregator now has comments!">&laquo; Blaggregator now has comments!</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/" title="Next Post: Tracking an encoding bug through many applications layers">Tracking an encoding bug through many applications layers &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/10/25/gjournal-is-a-tiny-private-journal-in-your-gmail/" title="Next Post: gJournal is a tiny private journal in your gMail">gJournal is a tiny private journal in your gMail &raquo;</a>
       
     </p>
   </footer>
