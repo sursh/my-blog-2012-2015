@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="Ever have those days where you feel like you spent all day working, but you haven&#8217;t gotten anything done? But when you stop to take stock, you &hellip;">
+  <meta name="description" content="We were having some great conversations about fellow Hacker Schoolers&#8217; blog posts in Humbug, but that channel is too high-volume for most alums &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,118 +76,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/25/gjournal-is-a-tiny-private-journal-in-your-gmail/">gJournal Is a Tiny Private Journal in Your gMail</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-25T01:40:00-04:00" pubdate data-updated="true">Oct 25<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ever have those days where you feel like you spent all day working, but you haven&#8217;t gotten anything done? But when you stop to take stock, you actually did get tons done.</p>
-
-<p>I had one of those days today. I ended the day feeling frustrated because pip was throwing a tantrum while installing matplotlib, which it&#8217;s done loads of times before just fine, thank you very much. But when I got the friendly daily prompt from [Christina&#8217;s] [changeslogged], I perked up. Taking stock, I realized I <strong><em>paste in the stuff from today</em></strong></p>
-
-<p>I&#8217;ve been getting these daily emails for quite some time and I&#8217;ve really come to love them. They provide a handy record on what I&#8217;ve done over time, they hold me accountable, and they remind me that I did in fact do good work today. Positive reinforcement is critical for building habits. I want to reward myself for good work so my lizard brain will want to do more of it.</p>
-
-<p>I want to keep doing this but was always self-conscious that I was sending my daily tasks to Christina&#8217;s app, Mailgun, and Gmail. Would like to make the footprint smaller. How about just Gmail?</p>
-
-<p>Whipped up a small script. Set it to run daily on Heroku and it will email you a prompt. And the reply-to header is set as your.email+journal@gmail.com. Set up an email filter for your emails to your.email+journal@gmail.com to skip your inbox and get the label journal, and you&#8217;ve got a great little journal archived in gmail. mailgun and heroku never see your info.</p>
-
-<p>You can use it a few other ways too: a gratitude journal to make you happier, a workout or habit tracker, and I&#8217;m sure lots of other ways too.</p>
-
-<p><a href="http://github.com/sursh/gjournal">Fork and customize this teeny tiny app on github</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/">Tracking an Encoding Bug Through Many Applications Layers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-28T17:02:00-04:00" pubdate data-updated="true">Jul 28<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>AKA How to decode HTML entities in your djago app</p>
-
-<p>so allison said systemat debugging is important at hacker school. [link to her blog post]. better than randomly changing things. fuzzy feeling, dig into it to understand underlying concepts. benefit: learn those concetps. ANd your instincts get better for new problems.</p>
-
-<p>having this bug:
-link to his blog post with chars
-show screenshot—chars appear as html entities. wat?</p>
-
-<p>a few layers:</p>
-
-<p>wordpress feed -> feedparser -> feedergrabber (by dpb) -> crawlposts -> db -> django view -> browser rendering html.</p>
-
-<p>could be a problem at any of those layers! what if my db isn&#8217;t using unicode?? etc.</p>
-
-<p>i&#8217;ve heard of encoding but didn&#8217;t really understand it. heard of ascii and unicode and knew ascii is older and has a smaller charset, and that&#8217;s it. Read joel&#8217;s [extremely entertaining] blog post on encoding.</p>
-
-<p>confirmed that encoding wsan&#8217;t the issue as we were&#8217;nt getting question marks, etc. also type(title) confirmed that the strings were unicode, as expected. had stuff that looked like HTML entities, which solve the problem of displaying the char &#8217;<a>&#8217; on a website instead of the browser interpreting that as a link.</p>
-
-<p>but where in that chain are they getting HTML encoded into entities? I started at crawlposts and worked my way backwards. at each level, had HTML entities. even looked at how wordpress generates title,s [link to CDATA info].</p>
-
-<p>so, wordpress is handing us htmlentities. tihs is acutally a really good idea, because it stops injection of malicious code. what if david had listened to the devil on his shoulder and titled his blog post &#8217;<script>somethingbad()</script>&#8217;?</p>
-
-<p>so, wordpress is handing us htmlentities, which is actually a good idea. we need to handle them on our end. a little googling lead me to an undocumented method HTMLParser, which takes entities and puts them back into HTML.</p>
-
-<p>but is that safe?? what abotu Evil David? Django is a step ahead of us. Jacob Kaplan-Moss, creater of django, spoke to us at hacker school and told us about the design decision to escape chars by default so you wouldn&#8217;t forget. [power of defaults]. to play with this, changed the title in the DB to <script>alert('thotuh')</script> but was foiled. Displayed as literals. you can see this in the [page source]. note: confused for a bit because the Inspect Element in chrome renders those escaped chars. so i went down a wrong path trying to figure out why HTML wasn&#8217;t rendering tags nested inside <a> elements. It does. Thanks, Obama.</p>
-
-<p>So, long story short, I&#8217;m going to decode the HTML entities with HTMLParser and pass them into Django whose templating language will escape them properly.</p>
-
-<p>[screenshot of successful result]</p>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -761,9 +649,184 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
 
     </article>
   
-  <div class="pagination">
+  
+    <article>
+      
+  <header>
     
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+      <h1 class="entry-title"><a href="/blog/2013/03/04/in-search-of-funny-gibberish/">In Search of Funny Gibberish</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-04T17:31:00-05:00" pubdate data-updated="true">Mar 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/maxlikely">David</a> and I paired this week to build a bot that analyzes 15MB of old Hacker News and generates completely new headlines that really sound like they came from HN. You can <a href="https://twitter.com/HackerNewsOrNot">follow the Twitter bot</a> or <a href="https://github.com/sursh/markov-hacker-news">check out our code</a>.</p>
+
+<h3>Inspiration</h3>
+
+<p>I was inspired by <a href="http://www.linkedlistnyc.org/archive/issue_081.html">this Hacker News parody</a> and <a href="https://twitter.com/joedamarkov">this Twitter bot</a> to build a Markov chain generator as my warm-up project in Python.</p>
+
+<h3>A lightweight introduction to Markov chain generators</h3>
+
+<p>Markov chain generators are an interesting and dead simple way to generate a chain of anything - words, weather predictions, market simulations - anything that has happened before and can happen again.</p>
+
+<p>The chain is generated by examining the current link in the chain, picking the next link based on what typically followed the first link in the training corpus. Then, it <em>completely forgets</em> about the initial link. It chooses the third link <em>only</em> based on what generally comes after the second link. And so forth.</p>
+
+<p>So there is no history, no memory. The generator can switch between training sentences stochastically, so it can generate sentences that sound kind of like the original source, but don&#8217;t necessarily make any sense, and are hopefully funny.</p>
+
+<h3>Bigrams vs trigrams</h3>
+
+<p>The first design decision to make is how much history to examine when choosing a new link in your chain. If you only go one word back, you are looking at pairs of words, or <em>bigrams</em>.</p>
+
+<p>Some sentences generated with bigrams: (please pardon that they&#8217;re all seeded with &#8216;why&#8217; - this is from an early branch)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Why I Am I Talk About To Be Designing For The Daily Check Out Of Braid Creating False
+</span><span class='line'>Why Machines Is Right Fit
+</span><span class='line'>Why Nokia Partners
+</span><span class='line'>Why We Doing In Siberia
+</span><span class='line'>Why Are Literally Amp Chrome Opera Singer Is Coming Soon
+</span><span class='line'>Why The Twitter Besides Buying Groupon Will Not Good Freely Available To Effectively Off
+</span><span class='line'>Why Objective C Safer In Gears
+</span><span class='line'>Why Some Sleep Deprived Brains
+</span><span class='line'>Why I Like Instapaper Redesigns Foursquare Checkin Offers Readers Cause Problems And Should Set Theorists
+</span><span class='line'>Why Dropbox S More Music Gear Online Teaching Ror Developers</span></code></pre></td></tr></table></div></figure>
+
+
+<p>They are nice and random, and clearly contain the right buzzwords, but they aren&#8217;t very grammatical and therefore can&#8217;t be funny. <strong>Humor relies on surprise:</strong> setting up an expectation, then delivering something different. With bigrams, you never get a coherent enough sentence to generate an expectation, so no shot at being funny.</p>
+
+<p>Let&#8217;s smooth out our chains by moving from bigrams to trigrams. So instead of looking at what follows a given individual word in our training corpus, we&#8217;ll look at what follows a pair of words. Here are some examples - note that the grammar is significantly better and some are worth a chuckle. I particularly like 7 and 10.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>My Year Of Experience Is A Big Twist
+</span><span class='line'>Engine Yard
+</span><span class='line'>Mini-microsoft: Compensatory Arrangements Of Certain (microsoft) Officers
+</span><span class='line'>The 12-step Landing Page
+</span><span class='line'>More Webmaster Questions - Answered
+</span><span class='line'>Scripting Gnu Screen
+</span><span class='line'>The Full Social Network Buttons To Operate On Your Terrorist Neighbor
+</span><span class='line'>Typical Tech Entrepreneur?
+</span><span class='line'>The Lost Lesson Of 'free'
+</span><span class='line'>Contact Lenses Are Curing The Founder's Syndrome</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Which seed?</h3>
+
+<p>HN is at its least self conscious and most easily lampooned when doling out advice. Consider these &#8216;how&#8217;- and &#8216;why&#8217;-seeded sentences:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>How To Choose The Right People And The Chance To Present
+</span><span class='line'>Why Javascript Is Broken
+</span><span class='line'>How Do You Manage Your Startup’s Pr At Tech Startups Are Moving To Rackspace
+</span><span class='line'>Why Do Organic Eggs Come In Bunches
+</span><span class='line'>How Apple Is The Prevalence Of Qwerty
+</span><span class='line'>Why Google Wants To Magically Transfer Gov Debt To Darwin
+</span><span class='line'>How To Finance Your App From The Lhc Will See Global History Of Governments And Geeks Parse The World
+</span><span class='line'>Why Are Bank Security Questions On Agile
+</span><span class='line'>How To Hack The Us - So Stock Up 879.55%
+</span><span class='line'>Why Computer Displays Suck For You</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When we choose a first word randomly from all the words that have ever been in headlines, we get a bigger assortment, but I think they&#8217;re less funny:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Canonical Contributes Only 1% Of Profit
+</span><span class='line'>Google Uneveils New Search Results With Google's Closure Of Paid Prioritization
+</span><span class='line'>What Do You Deal With Worldnow, Adds 19 Million Potential Users
+</span><span class='line'>Diminishing Dead-tree Media And Mobile Computing Is A Beautiful Monster
+</span><span class='line'>Ask Hn Yahoos: What Yahoo Should Do To Excel
+</span><span class='line'>China Demands New Pcs Is Ruined By A Thousand Years
+</span><span class='line'>Freemium: A Business Plan Competition
+</span><span class='line'>Buy My Blog, Please
+</span><span class='line'>Why I Am In Your Field?
+</span><span class='line'>8 Tips To Considerate When Planning To Move Themselves (neural Network)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The other drawback is that they&#8217;re more likely to hit on a seed with only one possible resulting sentence, like &#8220;Buy My Blog, Please,&#8221; above.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>grep -i <span class="s2">&quot;buy my blog&quot;</span> ../hnfull.txt
+</span><span class='line'>Gawker media boss Nick Denton: Buy my blog, please
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you think of the bot as walking through the possibilities, a common seed like &#8216;how&#8217; will branch of lots of different ways, so there are many paths for the bot to walk and thus many possible sentence outcomes. A less common seed, like &#8220;scripting&#8221; will result in fewer possible paths, and more likely to just return a real headline verbatim. There were only 10 ways to finish &#8220;buy my&#8221; in our corpus of 350,000 training headlines, compared to 7,710 ways to finish &#8220;how to.&#8221;</p>
+
+<h3>Raising the stakes</h3>
+
+<p>But how to make it as funny as possible? Some possible improvements:</p>
+
+<ul>
+<li><strong>Crowdsource funniness ratings</strong> (with mechanical turk or a &#8216;hot or not&#8217; app, etc). Only tweet out the funniest headlines.</li>
+<li>Feed the funniness ratings back into the algorithm. For example, only use the <strong>funniest seeds.</strong></li>
+<li>Do <strong>semantic analysis</strong> of parts of speech in the training corpus and use them with templates. This would improve grammar but decrease spontaneity.</li>
+<li>Hire Nick and Dave to crank out <a href="http://www.linkedlistnyc.org/archive/issue_081.html">more of these</a> :)</li>
+</ul>
+
+
+<p>Any other ideas?</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -776,14 +839,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/10/25/gjournal-is-a-tiny-private-journal-in-your-gmail/">gJournal is a tiny private journal in your gMail</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/28/tracking-an-encoding-bug-through-many-applications-layers/">Tracking an encoding bug through many applications layers</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/">Blaggregator now has comments!</a>
       </li>
     
@@ -793,6 +848,14 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
     
       <li class="post">
         <a href="/blog/2013/04/01/autocomplete-in-git/">Git + Autocomplete = Bliss</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/26/demo-code-review/">Demo code review</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/on-rakefiles-and-rabbit-holes/">On Rakefiles and Rabbit Holes</a>
       </li>
     
   </ul>
