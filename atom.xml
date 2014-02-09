@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-01-27T13:18:19-05:00</updated>
+  <updated>2014-02-08T19:53:39-05:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[testing]]></title>
+    <link href="http://sursh.github.com/blog/2014/02/08/testing/"/>
+    <updated>2014-02-08T19:53:00-05:00</updated>
+    <id>http://sursh.github.com/blog/2014/02/08/testing</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unexpected Lessons from ORDCamp: Unstructure is the Best Structure]]></title>
