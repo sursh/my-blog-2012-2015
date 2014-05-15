@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="David and I are running our app on Heroku, but it uses too much memory to run! Got any clever optimization suggestions? We&#8217;re building a Markov &hellip;">
+  <meta name="description" content="David and I paired this week to build a bot that analyzes 15MB of old Hacker News and generates completely new headlines that really sound like they &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,63 +76,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/05/help-us-plug-our-memory-leaks/">Help Us Plug Our Memory Leaks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-05T00:08:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>David and I are running our app on Heroku, but it uses too much memory to run! <strong>Got any clever optimization suggestions?</strong></p>
-
-<p>We&#8217;re building a Markov chain generator that is trained on a corpus of 15MB of old Hacker News headlines. The app currently indexes the training corpus and constructs a matrix of all the possibilities, then queries that matrix to generate a hopefully entertaining new headline. Preview it <a href="http://twitter.com/HackerNewsOrNot">here</a>.</p>
-
-<p><strong>However, as we first wrote it, it used 1+ GB of memory when we deployed to Heroku, where the limit is 512 MB!</strong> We wrangled it down to 570 MB today and will tackle it again tomorrow morning, but need more ideas.</p>
-
-<p>Some things we&#8217;ve tried:</p>
-
-<ul>
-<li>Pickling the matrix. Not pickling the matrix. (didn&#8217;t help)</li>
-<li>Storing the words as <code>int</code>s in our matrix rather than <code>string</code>s (helped)</li>
-<li>Tweaked the data structure (helped, could probably do more with this)</li>
-<li>We ran out of time, but want to try some sort of data store. Redis?</li>
-</ul>
-
-
-<p><strong>What should we try next?</strong> Our code after the jump:</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/05/help-us-plug-our-memory-leaks/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
   
   
     <article>
@@ -326,10 +269,6 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/05/15/test/">Test</a>
-      </li>
-    
-      <li class="post">
         <a href="/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/">The Slacker Developer&#8217;s Guide to the Mavericks Upgrade</a>
       </li>
     
@@ -343,6 +282,10 @@
     
       <li class="post">
         <a href="/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/">How to Get the Most out of Hacker School</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/01/autocomplete-in-git/">Git + Autocomplete = Bliss</a>
       </li>
     
   </ul>

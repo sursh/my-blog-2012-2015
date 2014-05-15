@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-05-15T17:45:28-04:00</updated>
+  <updated>2014-05-15T17:52:57-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Test]]></title>
-    <link href="http://sursh.github.com/blog/2014/05/15/test/"/>
-    <updated>2014-05-15T17:45:00-04:00</updated>
-    <id>http://sursh.github.com/blog/2014/05/15/test</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Slacker Developer's Guide to the Mavericks Upgrade]]></title>
