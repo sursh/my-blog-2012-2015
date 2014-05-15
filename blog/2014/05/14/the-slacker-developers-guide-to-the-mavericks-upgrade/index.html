@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: octopress - Sasha Laundy</title>
+  <title>The Slacker Developer's Guide to the Mavericks Upgrade - Sasha Laundy</title>
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="Category: octopress">
+  <meta name="description" content="I am not an early adopter. Until last week, I was running 10.7. Yes, it&#8217;s true. Don&#8217;t judge. I had code to ship. No time for yak shaving &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sursh.github.com/blog/categories/octopress/">
+  <link rel="canonical" href="http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,35 +75,103 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Octopress</h1>
+    
+      <h1 class="entry-title">The Slacker Developer's Guide to the Mavericks Upgrade</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T22:00:00-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I am not an early adopter.</p>
 
-  
-  <h2>2013</h2>
+<p>Until last week, I was running 10.7. Yes, it&#8217;s true. Don&#8217;t judge. I had code to ship. No time for yak shaving!</p>
 
-<article>
-  
-<h1><a href="/blog/2013/03/11/turbocharging-octopress/">Turbocharging Octopress</a></h1>
-<time datetime="2013-03-11T19:05:00-04:00" pubdate><span class='month'>Mar</span> <span class='day'>11</span> <span class='year'>2013</span></time>
+<p>But finally I bit the bullet. After dual redundant spatially-distributed backups, I ran the upgrade. And everything went great at the GUI level! And the Messages app is awesome! But Ruby, virtualenv, and Java were all borked. I don&#8217;t even Ruby, but I use Octopress and Heroku, so I couldn&#8217;t even blog or restart Hubot. Sadness!</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/octopress/'>octopress</a></span>
-</footer>
+<p>Some tips in your upgrade:</p>
+
+<ol>
+<li><p>Homebrew links will probably be messed up. <code>brew unlink foo</code> and then <code>brew link foo</code> fixed most of these. Consider scripting it to save time and heartache!</p></li>
+<li><p>Ruby has a new version, and RVM is now using <code>.ruby_version</code> instead of <code>.rvmrc</code> to keep track of Ruby versions. It automatically moved these files around without telling me, which is half of what broke my blog.</p></li>
+<li><p>Ruby 2.whatever will complain about Readlines or Yaml or OpenSSL depending on its mood. Try uninstalling Ruby with RVM, installing whatever it demands, and then reinstalling Ruby and seeing if it works. At this point, I&#8217;m basically thinking of Ruby as a demanding newborn that is astonishingly articulate about its needs.</p></li>
+<li><p>Java is gone because reasons. <a href="http://osxdaily.com/2013/11/01/install-java-os-x-mavericks/">Here&#8217;s how to reinstall it</a>.</p></li>
+<li><p>I&#8217;m still not sure what&#8217;s going on with my virtualenv but I think it has to do with my questionable decision to use a third-party Python distro. Passing in a path to the system Python with <code>-p</code> seems to be a decent workaround.</p></li>
+<li><p>A bunch of packages wouldn&#8217;t install through pip, and it turns out that the new default when flags are not recognized by gcc is to CATASTROPHICALLY CRASH rather than keep calm and carry on. Don&#8217;t have time for this drama? Add the following to your environment:</p></li>
+</ol>
 
 
-</article>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">export</span> <span class="n">CFLAGS</span><span class="o">=-</span><span class="n">Qunused</span><span class="o">-</span><span class="n">arguments</span>
+</span><span class='line'><span class="n">export</span> <span class="n">CPPFLAGS</span><span class="o">=-</span><span class="n">Qunused</span><span class="o">-</span><span class="n">arguments</span>
+</span></code></pre></td></tr></table></div></figure>
 
+
+<p>Back to work!</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Sasha Laundy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T22:00:00-04:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/01/26/unexpected-lessons-from-ordcamp/" title="Previous Post: Unexpected Lessons from ORDCamp: Unstructure is the Best Structure">&laquo; Unexpected Lessons from ORDCamp: Unstructure is the Best Structure</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-02-08T20:15:53-05:00</updated>
+  <updated>2014-05-14T22:32:14-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Slacker Developer's Guide to the Mavericks Upgrade]]></title>
+    <link href="http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/"/>
+    <updated>2014-05-14T22:00:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade</id>
+    <content type="html"><![CDATA[<p>I am not an early adopter.</p>
+
+<p>Until last week, I was running 10.7. Yes, it&#8217;s true. Don&#8217;t judge. I had code to ship. No time for yak shaving!</p>
+
+<p>But finally I bit the bullet. After dual redundant spatially-distributed backups, I ran the upgrade. And everything went great at the GUI level! And the Messages app is awesome! But Ruby, virtualenv, and Java were all borked. I don&#8217;t even Ruby, but I use Octopress and Heroku, so I couldn&#8217;t even blog or restart Hubot. Sadness!</p>
+
+<p>Some tips in your upgrade:</p>
+
+<ol>
+<li><p>Homebrew links will probably be messed up. <code>brew unlink foo</code> and then <code>brew link foo</code> fixed most of these. Consider scripting it to save time and heartache!</p></li>
+<li><p>Ruby has a new version, and RVM is now using <code>.ruby_version</code> instead of <code>.rvmrc</code> to keep track of Ruby versions. It automatically moved these files around without telling me, which is half of what broke my blog.</p></li>
+<li><p>Ruby 2.whatever will complain about Readlines or Yaml or OpenSSL depending on its mood. Try uninstalling Ruby with RVM, installing whatever it demands, and then reinstalling Ruby and seeing if it works. At this point, I&#8217;m basically thinking of Ruby as a demanding newborn that is astonishingly articulate about its needs.</p></li>
+<li><p>Java is gone because reasons. <a href="http://osxdaily.com/2013/11/01/install-java-os-x-mavericks/">Here&#8217;s how to reinstall it</a>.</p></li>
+<li><p>I&#8217;m still not sure what&#8217;s going on with my virtualenv but I think it has to do with my questionable decision to use a third-party Python distro. Passing in a path to the system Python with <code>-p</code> seems to be a decent workaround.</p></li>
+<li><p>A bunch of packages wouldn&#8217;t install through pip, and it turns out that the new default when flags are not recognized by gcc is to CATASTROPHICALLY CRASH rather than keep calm and carry on. Don&#8217;t have time for this drama? Add the following to your environment:</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">export</span> <span class="n">CFLAGS</span><span class="o">=-</span><span class="n">Qunused</span><span class="o">-</span><span class="n">arguments</span>
+</span><span class='line'><span class="n">export</span> <span class="n">CPPFLAGS</span><span class="o">=-</span><span class="n">Qunused</span><span class="o">-</span><span class="n">arguments</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Back to work!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Unexpected Lessons from ORDCamp: Unstructure is the Best Structure]]></title>
