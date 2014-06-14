@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-05-15T17:52:57-04:00</updated>
+  <updated>2014-06-13T21:57:34-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -27,7 +27,7 @@
 <p>Some tips in your upgrade:</p>
 
 <ol>
-<li><p>Homebrew links will probably be messed up. <code>brew unlink foo</code> and then <code>brew link foo</code> fixed most of these. Consider scripting it to save time and heartache!</p></li>
+<li><p>Homebrew links will probably be messed up. <code>brew unlink foo</code> and then <code>brew link foo</code> fixed most of these. Consider scripting it to save time and heartache! E.G. <code>for i in $( brew list ); do brew unlink $i; brew link $i; done</code></p></li>
 <li><p>Ruby has a new version, and RVM is now using <code>.ruby_version</code> instead of <code>.rvmrc</code> to keep track of Ruby versions. It automatically moved these files around without telling me, which is half of what broke my blog.</p></li>
 <li><p>Ruby 2.whatever will complain about Readlines or Yaml or OpenSSL depending on its mood. Try uninstalling Ruby with RVM, installing whatever it demands, and then reinstalling Ruby and seeing if it works. At this point, I&#8217;m basically thinking of Ruby as a demanding newborn that is astonishingly articulate about its needs.</p></li>
 <li><p>Java is gone because reasons. <a href="http://osxdaily.com/2013/11/01/install-java-os-x-mavericks/">Here&#8217;s how to reinstall it</a>.</p></li>
