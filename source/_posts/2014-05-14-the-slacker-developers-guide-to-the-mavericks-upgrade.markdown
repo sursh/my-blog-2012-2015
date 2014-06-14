@@ -14,7 +14,7 @@ But finally I bit the bullet. After dual redundant spatially-distributed backups
 
 Some tips in your upgrade: 
 
-1. Homebrew links will probably be messed up. `brew unlink foo` and then `brew link foo` fixed most of these. Consider scripting it to save time and heartache! 
+1. Homebrew links will probably be messed up. `brew unlink foo` and then `brew link foo` fixed most of these. Consider scripting it to save time and heartache! E.G. `for i in $( brew list ); do brew unlink $i; brew link $i; done`
 
 1. Ruby has a new version, and RVM is now using `.ruby_version` instead of `.rvmrc` to keep track of Ruby versions. It automatically moved these files around without telling me, which is half of what broke my blog. 
 
