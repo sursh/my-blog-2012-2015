@@ -31,11 +31,13 @@ Now, you can iterate through all the Session objects and delete them. (caution!)
 ...   s.delete()
 ```
 
-Or, as [Jacob Kaplan-Moss pointed out](https://twitter.com/jacobian/status/504272832231395328), just delete them straight from that queryset and win at code golf: 
+Or, as [Jacob Kaplan-Moss pointed out](https://twitter.com/jacobian/status/504272832231395328), if you delete them straight from that queryset, you not only win at code golf, but the query will be faster due to how Querysets work under the hood: 
 
 ``` bash
 >>> Session.objects.all().delete()
 ```
+
+See our [Twitter conversation](https://twitter.com/jacobian/status/504272832231395328) or the Django docs if you want more info on Querysets. 
 
 Congradulations!  Your site is now very lonely. 
 
