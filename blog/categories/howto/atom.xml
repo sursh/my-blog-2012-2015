@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HOWTO | Sasha Laundy]]></title>
   <link href="http://sursh.github.com/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-08-26T10:44:17-04:00</updated>
+  <updated>2014-08-26T10:53:07-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -45,12 +45,14 @@ $ heroku run python manage.py shell
 ...   s.delete()
 ```</p></blockquote></blockquote></blockquote>
 
-<p>Or, as <a href="https://twitter.com/jacobian/status/504272832231395328">Jacob Kaplan-Moss pointed out</a>, just delete them straight from that queryset and win at code golf:</p>
+<p>Or, as <a href="https://twitter.com/jacobian/status/504272832231395328">Jacob Kaplan-Moss pointed out</a>, if you delete them straight from that queryset, you not only win at code golf, but the query will be faster due to how Querysets work under the hood:</p>
 
 <p>``` bash</p>
 
 <blockquote><blockquote><blockquote><p>Session.objects.all().delete()
 ```</p></blockquote></blockquote></blockquote>
+
+<p>See our <a href="https://twitter.com/jacobian/status/504272832231395328">Twitter conversation</a> or the Django docs if you want more info on Querysets.</p>
 
 <p>Congradulations!  Your site is now very lonely.</p>
 ]]></content>
