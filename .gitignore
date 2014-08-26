@@ -5,6 +5,8 @@ HOWTO.md
 .gist-cache
 .preview-mode
 .pygments-cache
+*.swp
+*.swo
 .lock
 _deploy
 Gemfile.lock
