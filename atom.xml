@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-08-26T10:01:29-04:00</updated>
+  <updated>2014-08-26T10:44:17-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -44,6 +44,13 @@
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; <span class="k">for </span>s in Session.objects.all<span class="o">()</span>:
 </span><span class='line'>...   s.delete<span class="o">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Or, as <a href="https://twitter.com/jacobian/status/504272832231395328">Jacob Kaplan-Moss pointed out</a>, just delete them straight from that queryset and win at code golf:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; Session.objects.all<span class="o">()</span>.delete<span class="o">()</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
