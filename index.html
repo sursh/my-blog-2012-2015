@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="I am not an early adopter. Until last week, I was running 10.7. Yes, it&#8217;s true. Don&#8217;t judge. I had code to ship. No time for yak shaving &hellip;">
+  <meta name="description" content="I recently hit a bug with Blaggregator, a Django app I&#8217;m running in production on Heroku, and the fix needed each user to log out and then log &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,71 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/">HOWTO Force All Django Users to Log Out With the Django ORM</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-26T09:42:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I recently hit a bug with <a href="http://blaggregator.us">Blaggregator</a>, a Django app I&#8217;m running in production on Heroku, and the fix needed each user to log out and then log back in for it to take effect.</p>
+
+<p>So how to log out all users at once? A bunch of threads around the internet suggested deleting the Session table, as that stores all session information for users (that they are logged in, shopping cart info, etc). That&#8217;s easy enough with the <code>dbshell</code>, but I&#8217;m hitting a weird psql bug on Heroku that I don&#8217;t have time to diagnose, and plus, working directly in the dbshell makes me feel icky. So here&#8217;s how to force all Django users to log out on your Heroku-backed app using the ORM, which is one layer of abstraction farther from shooting yourself in the foot.</p>
+
+<p><em>Be careful</em> since this can have adverse effects for your customers (remove items in a shopping cart, etc). It will also confuse and annoy visitors who are currently on your site. There are more graceful ways to accomplish this, but in my case it was quick and effective. I&#8217;m not storing anything important in the Session for Blaggregator, and the site has &lt; 1,000 users as it&#8217;s constrained by the total size of the Hacker School alumni population. That&#8217;s a small enough number that none of them were on the site yesterday early morning when I was deploying. So this was a quick and dirty way to deploy the fix and make sure it was applied.</p>
+
+<p>To get started, fire up the Heroku Django shell:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>heroku run python manage.py shell
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When you get the Django shell prompt (<code>&gt;&gt;&gt;</code>), then you can import the Session model. (If you want to go read the code, the module name tells you where to look: <em>django.contrib.sessions</em>.<strong>models</strong> looks in your virtualenv&#8217;s lib/python2.7/site-packages/<em>django/contrib/sessions/</em> for <strong>models</strong>.py)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; from django.contrib.sessions.models import Session
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, you can iterate through all the Session objects and delete them. (caution!)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; <span class="k">for </span>s in Session.objects.all<span class="o">()</span>:
+</span><span class='line'>...   s.delete<span class="o">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Congradulations!  Your site is now very lonely.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -727,63 +792,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/05/help-us-plug-our-memory-leaks/">Help Us Plug Our Memory Leaks</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-05T00:08:00-05:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>David and I are running our app on Heroku, but it uses too much memory to run! <strong>Got any clever optimization suggestions?</strong></p>
-
-<p>We&#8217;re building a Markov chain generator that is trained on a corpus of 15MB of old Hacker News headlines. The app currently indexes the training corpus and constructs a matrix of all the possibilities, then queries that matrix to generate a hopefully entertaining new headline. Preview it <a href="http://twitter.com/HackerNewsOrNot">here</a>.</p>
-
-<p><strong>However, as we first wrote it, it used 1+ GB of memory when we deployed to Heroku, where the limit is 512 MB!</strong> We wrangled it down to 570 MB today and will tackle it again tomorrow morning, but need more ideas.</p>
-
-<p>Some things we&#8217;ve tried:</p>
-
-<ul>
-<li>Pickling the matrix. Not pickling the matrix. (didn&#8217;t help)</li>
-<li>Storing the words as <code>int</code>s in our matrix rather than <code>string</code>s (helped)</li>
-<li>Tweaked the data structure (helped, could probably do more with this)</li>
-<li>We ran out of time, but want to try some sort of data store. Redis?</li>
-</ul>
-
-
-<p><strong>What should we try next?</strong> Our code after the jump:</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/05/help-us-plug-our-memory-leaks/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -799,6 +807,10 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/">HOWTO force all Django users to log out with the Django ORM</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/">The Slacker Developer&#8217;s Guide to the Mavericks Upgrade</a>
       </li>
     
@@ -812,10 +824,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
     
       <li class="post">
         <a href="/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/">How to Get the Most out of Hacker School</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/01/autocomplete-in-git/">Git + Autocomplete = Bliss</a>
       </li>
     
   </ul>

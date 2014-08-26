@@ -53,12 +53,18 @@
         <lastmod>2014-06-13T21:56:14-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/
+        </loc>
+        <lastmod>2014-08-26T10:01:01-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://sursh.github.com/blog/archives/</loc>
-        <lastmod>2014-06-13T21:56:14-04:00</lastmod>
+        <lastmod>2014-08-26T10:01:01-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/</loc>
-        <lastmod>2014-06-13T21:56:14-04:00</lastmod>
+        <lastmod>2014-08-26T10:01:01-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/robots.txt</loc>

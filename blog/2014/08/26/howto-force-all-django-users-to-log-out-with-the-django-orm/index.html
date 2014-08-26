@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: conferences - Sasha Laundy</title>
+  <title>HOWTO force all Django users to log out with the Django ORM - Sasha Laundy</title>
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="Category: conferences">
+  <meta name="description" content="I recently hit a bug with Blaggregator, a Django app I&#8217;m running in production on Heroku, and the fix needed each user to log out and then log &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sursh.github.com/blog/categories/conferences/">
+  <link rel="canonical" href="http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,35 +75,113 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Conferences</h1>
+    
+      <h1 class="entry-title">HOWTO Force All Django Users to Log Out With the Django ORM</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-26T09:42:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I recently hit a bug with <a href="http://blaggregator.us">Blaggregator</a>, a Django app I&#8217;m running in production on Heroku, and the fix needed each user to log out and then log back in for it to take effect.</p>
 
-  
-  <h2>2014</h2>
+<p>So how to log out all users at once? A bunch of threads around the internet suggested deleting the Session table, as that stores all session information for users (that they are logged in, shopping cart info, etc). That&#8217;s easy enough with the <code>dbshell</code>, but I&#8217;m hitting a weird psql bug on Heroku that I don&#8217;t have time to diagnose, and plus, working directly in the dbshell makes me feel icky. So here&#8217;s how to force all Django users to log out on your Heroku-backed app using the ORM, which is one layer of abstraction farther from shooting yourself in the foot.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/01/26/unexpected-lessons-from-ordcamp/">Unexpected Lessons from ORDCamp: Unstructure is the Best Structure</a></h1>
-<time datetime="2014-01-26T17:35:00-05:00" pubdate><span class='month'>Jan</span> <span class='day'>26</span> <span class='year'>2014</span></time>
+<p><em>Be careful</em> since this can have adverse effects for your customers (remove items in a shopping cart, etc). It will also confuse and annoy visitors who are currently on your site. There are more graceful ways to accomplish this, but in my case it was quick and effective. I&#8217;m not storing anything important in the Session for Blaggregator, and the site has &lt; 1,000 users as it&#8217;s constrained by the total size of the Hacker School alumni population. That&#8217;s a small enough number that none of them were on the site yesterday early morning when I was deploying. So this was a quick and dirty way to deploy the fix and make sure it was applied.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/building-culture/'>building culture</a>, <a class='category' href='/blog/categories/conferences/'>conferences</a>, <a class='category' href='/blog/categories/just-enough-structure/'>just enough structure</a></span>
-</footer>
+<p>To get started, fire up the Heroku Django shell:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>heroku run python manage.py shell
+</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>When you get the Django shell prompt (<code>&gt;&gt;&gt;</code>), then you can import the Session model. (If you want to go read the code, the module name tells you where to look: <em>django.contrib.sessions</em>.<strong>models</strong> looks in your virtualenv&#8217;s lib/python2.7/site-packages/<em>django/contrib/sessions/</em> for <strong>models</strong>.py)</p>
 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; from django.contrib.sessions.models import Session
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, you can iterate through all the Session objects and delete them. (caution!)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; <span class="k">for </span>s in Session.objects.all<span class="o">()</span>:
+</span><span class='line'>...   s.delete<span class="o">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Congradulations!  Your site is now very lonely.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Sasha Laundy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-26T09:42:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/django/'>Django</a>, <a class='category' href='/blog/categories/howto/'>HOWTO</a>, <a class='category' href='/blog/categories/heroku/'>Heroku</a>, <a class='category' href='/blog/categories/technical/'>technical</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/" data-via="sashalaundy" data-counturl="http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/" title="Previous Post: The Slacker Developer's Guide to the Mavericks Upgrade">&laquo; The Slacker Developer's Guide to the Mavericks Upgrade</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
