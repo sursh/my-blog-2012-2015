@@ -31,5 +31,11 @@ Now, you can iterate through all the Session objects and delete them. (caution!)
 ...   s.delete()
 ```
 
+Or, as [Jacob Kaplan-Moss pointed out](https://twitter.com/jacobian/status/504272832231395328), just delete them straight from that queryset and win at code golf: 
+
+``` bash
+>>> Session.objects.all().delete()
+```
+
 Congradulations!  Your site is now very lonely. 
 
