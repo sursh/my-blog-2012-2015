@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-08-26T10:53:07-04:00</updated>
+  <updated>2014-08-27T09:35:20-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Switching to vim]]></title>
+    <link href="http://sursh.github.com/blog/2014/08/27/switching-to-vim/"/>
+    <updated>2014-08-27T09:31:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2014/08/27/switching-to-vim</id>
+    <content type="html"><![CDATA[<p>I should really have switched to vim ten years ago when I first started using the command line. But vim has a hell of a hill to get over, and I never made it high enough to keep going. I&#8217;m revisiting it because I love keyboard shortcuts! Once they&#8217;re in your brain, you hardly have to think to move the whole program around at a blazing speed. Then you get to feel like a wizard.</p>
+
+<p>Starting August 1, I deleted my symlink to <code>subl</code> and went cold turkey. It&#8217;s slowed me down pretty significantly, but that&#8217;s been a great incentive to set aside time every day to learn new vim stuff, and investing in the tools you use all day every day is always a great investment. I still feel pretty clumsy, but I now find myself editing non-code things in vim! Which is a good sign!</p>
+
+<h2>Resources I&#8217;m Using</h2>
+
+<ul>
+<li><p>I&#8217;ve been working my way through <a href="http://www.amazon.com/Practical-Vim-Thought-Pragmatic-Programmers/dp/1934356980/">Practical Vim</a>, which is great at getting you <em>thinking</em> in the vim way. I suspect this will make me effective much faster than just googling for things as they come up.</p></li>
+<li><p>When I want to look something up on the fly, Google usually points me to the <a href="http://vim.wikia.com/wiki/">Vim tips wiki</a>, which is <em>encyclopedic</em> for one-off solutions and quick fixes, even if they&#8217;re not well contextualized.</p></li>
+<li><p>I&#8217;ve been pestering my colleagues, developer friends, and other Hacker School folks for their favorite config and tips and tricks, which has been very fruitful.</p></li>
+</ul>
+
+
+<p>ALSO, I bought the domain thedailyvim.com, and am considering setting up a daily tips feed there. <a href="https://twitter.com/SashaLaundy">Send me a tweet</a> if that&#8217;s something you&#8217;d be interested in!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HOWTO force all Django users to log out with the Django ORM]]></title>

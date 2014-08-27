@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="I recently hit a bug with Blaggregator, a Django app I&#8217;m running in production on Heroku, and the fix needed each user to log out and then log &hellip;">
+  <meta name="description" content="I should really have switched to vim ten years ago when I first started using the command line. But vim has a hell of a hill to get over, and I never &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/27/switching-to-vim/">Switching to Vim</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-27T09:31:00-04:00" pubdate data-updated="true">Aug 27<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I should really have switched to vim ten years ago when I first started using the command line. But vim has a hell of a hill to get over, and I never made it high enough to keep going. I&#8217;m revisiting it because I love keyboard shortcuts! Once they&#8217;re in your brain, you hardly have to think to move the whole program around at a blazing speed. Then you get to feel like a wizard.</p>
+
+<p>Starting August 1, I deleted my symlink to <code>subl</code> and went cold turkey. It&#8217;s slowed me down pretty significantly, but that&#8217;s been a great incentive to set aside time every day to learn new vim stuff, and investing in the tools you use all day every day is always a great investment. I still feel pretty clumsy, but I now find myself editing non-code things in vim! Which is a good sign!</p>
+
+<h2>Resources I&#8217;m Using</h2>
+
+<ul>
+<li><p>I&#8217;ve been working my way through <a href="http://www.amazon.com/Practical-Vim-Thought-Pragmatic-Programmers/dp/1934356980/">Practical Vim</a>, which is great at getting you <em>thinking</em> in the vim way. I suspect this will make me effective much faster than just googling for things as they come up.</p></li>
+<li><p>When I want to look something up on the fly, Google usually points me to the <a href="http://vim.wikia.com/wiki/">Vim tips wiki</a>, which is <em>encyclopedic</em> for one-off solutions and quick fixes, even if they&#8217;re not well contextualized.</p></li>
+<li><p>I&#8217;ve been pestering my colleagues, developer friends, and other Hacker School folks for their favorite config and tips and tricks, which has been very fruitful.</p></li>
+</ul>
+
+
+<p>ALSO, I bought the domain thedailyvim.com, and am considering setting up a daily tips feed there. <a href="https://twitter.com/SashaLaundy">Send me a tweet</a> if that&#8217;s something you&#8217;d be interested in!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -713,94 +762,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters/">Crashing Heroku (or When Memory Management in Python Really Matters)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-07T18:24:00-05:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/maxlikely">David</a> and I paired this week to build a <a href="http://www.codinghorror.com/blog/2008/06/markov-and-you.html">Markov chain generator</a>. It analyzes 15MB of old Hacker News headlines and generates completely new headlines that really sound like they came from HN. You can <a href="https://twitter.com/HackerNewsOrNot">follow the Twitter bot</a> or <a href="https://github.com/sursh/markov-hacker-news">check out the code</a>.</p>
-
-<p><a href="http://blog.sashalaundy.com/blog/2013/03/05/help-us-plug-our-memory-leaks/">Last time</a>, we asked your advice on how to handle all possible trigrams in 15 MB of seed text - a task that took up about 1 GB of memory in our first implementation, rapidly blasting through Heroku&#8217;s limit of 512 MB. The culprit? <strong>Dictionaries.</strong></p>
-
-<p>Our initial data structure was a dict of dicts. The key was a <em>bigram</em>, or word pair, and the value was a dict of all of the words that followed that bigram in the training text and the number of times they occured. Wat? Here&#8217;s an example:</p>
-
-<figure class='code'><figcaption><span>Our initial data structure</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="p">(</span><span class="s">&#39;how&#39;</span><span class="p">,</span> <span class="s">&#39;to&#39;</span><span class="p">):</span> <span class="p">{</span> <span class="s">&#39;do&#39;</span><span class="p">:</span> <span class="mi">529</span><span class="p">,</span>
-</span><span class='line'>                   <span class="s">&#39;grow&#39;</span><span class="p">:</span> <span class="mi">202</span><span class="p">,</span>
-</span><span class='line'>                   <span class="s">&#39;know&#39;</span><span class="p">:</span> <span class="mi">134</span><span class="p">,</span>
-</span><span class='line'>                   <span class="o">.....</span>
-</span><span class='line'>                 <span class="p">},</span>
-</span><span class='line'>  <span class="p">(</span><span class="s">&#39;to&#39;</span><span class="p">,</span> <span class="s">&#39;do&#39;</span><span class="p">):</span> <span class="p">{</span> <span class="s">&#39;the&#39;</span><span class="p">:</span> <span class="mi">1245</span><span class="p">,</span>
-</span><span class='line'>                  <span class="s">&#39;everything&#39;</span><span class="p">:</span> <span class="mi">149</span><span class="p">,</span>
-</span><span class='line'>                  <span class="o">.....</span>
-</span><span class='line'>                <span class="p">},</span>
-</span><span class='line'>  <span class="o">...</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>With 15 MB of training text and so much redundancy, this can get out of hand quickly! Every word appears <em>at least</em> 3 times in the matrix, and some appear thousands of times.</p>
-
-<h3>Possible solutions:</h3>
-
-<ul>
-<li><strong>Generators.</strong> for iterating over the headlines. This helped a lot - got us from 1.3 G down to about 850 MB.</li>
-<li><strong>Compression.</strong> Tossing out common values, like <code>1</code> for the count of the long tail of words.</li>
-<li><strong>Creative use of data types.</strong> E.G. storing words as <code>int</code>s instead of <code>string</code>s.</li>
-<li><strong>Lists.</strong> They take up less memory than dicts. One variation that we tried (and is in <a href="https://github.com/sursh/markov-hacker-news/blob/e584ef95ade08f03a482debfc0c0f47adde67af3/trigrams.py">this version of our code</a>) is creating two dicts of lists rather than one dict of dicts.</li>
-<li><strong>Trade memory for speed.</strong> Darius, a Hacker School alum, pointed us to <a href="http://stackoverflow.com/questions/327223/memory-efficient-alternatives-to-python-dictionaries/327295#327295">his Stack Overflow answer</a>, where he laid out a few other approaches that mainly trade memory usage for speed. Also, David dug up some recent papers that focus entirely on this problem. Researchers are currently doing some very clever algorithms to get the most out of their data structures.</li>
-</ul>
-
-
-<h3>So where did we leave it?</h3>
-
-<p>Darius&#8217; suggestions and the approaches in the literature will certainly help reduce memory usage. We wanted to maximize learning per unit of time at Hacker School and didn&#8217;t think implementing these approaches teach us proportionally more than reading about them. We shipped it by deploying on a machine with more memory. Follow the Twitter bot <a href="https://twitter.com/HackerNewsOrNot">here</a>!</p>
-
-<h4>Stuff I learned along the way:</h4>
-
-<p> Generators, classes and methods in python, pickle, regex, defaultdict, Tweepy, Buffer&#8217;s API, how bad the built in titlecase methods are in Python, some clever way to handle default arguments, some fundamental principles of NLP.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -816,6 +777,10 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/27/switching-to-vim/">Switching to vim</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/">HOWTO force all Django users to log out with the Django ORM</a>
       </li>
     
@@ -829,10 +794,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
     
       <li class="post">
         <a href="/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/">Blaggregator now has comments!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/">How to Get the Most out of Hacker School</a>
       </li>
     
   </ul>
