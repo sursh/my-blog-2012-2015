@@ -16,8 +16,9 @@ The second half of the talk, where we lay out a framework for structuring scope 
 
 The second thing I added were symptoms of scoping poorly. Just as it's difficult to see that you're in the Matrix when you're in it, it's difficult to know that you're bad at scoping when you're bad at it. The presentation has four red flags so you can spot weak scoping and have the language to address it. The nice thing about these is that once you give them a name, everyone on your team is more likely to spot them and call them out. 
 
-O'Reilly is working on the video and we are working on the annotated slides. I'll update this post when they're out. In the meantime, please enjoy this visualization of the most popular American names over time:
+O'Reilly is working on the video and we are working on the annotated slides. I'll update this post when they're out. In the meantime, please enjoy this totally unrelated visualization of the most popular American names over time:
 
 <iframe src="http://giphy.com/embed/5xtDarJpumZXFpm3tf2?html5=true" width="480" height="303" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
 
 I spent most of the rest of the conference on the "hallway track" meeting new folks and catching up with colleagues from around the world. The sessions look *awesome* and I bookmarked a bunch of them to watch later. Literally too many to list right now. Will pare them down the list for the next post. 
