@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: data | Sasha Laundy]]></title>
+  <link href="http://sursh.github.com/blog/categories/data/atom.xml" rel="self"/>
+  <link href="http://sursh.github.com/"/>
+  <updated>2014-10-21T10:17:26-04:00</updated>
+  <id>http://sursh.github.com/</id>
+  <author>
+    <name><![CDATA[Sasha Laundy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Our Talk at Strata]]></title>
+    <link href="http://sursh.github.com/blog/2014/10/21/our-talk-at-strata/"/>
+    <updated>2014-10-21T10:11:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2014/10/21/our-talk-at-strata</id>
+    <content type="html"><![CDATA[<p>Last week I attended O'Reilly's data conference, Strata. I had a great time, including  co-presenting with my colleague <a href="http://shron.net">Max Shron</a> on the topic of <a href="http://strataconf.com/stratany2014/public/schedule/detail/36730">Solving the Right Problem</a>.</p>
+
+<p>Based off the material in <a href="http://shop.oreilly.com/product/0636920029182.do">his book</a>, we argued that it is easy to crunch some numbers and feel like you're doing data science, but in the end to come up empty-handed since you didn't pick the right problem in the first place. This is a particular danger since data scientists love data and programming and the latest tools, so it can be very tempting to just dive into the data set without first considering where you'll end up.</p>
+
+<p>We looked to the design world as a case study for how other disciplines have handled this very same problem, and propose that it's not enough to be technically and mathematically competent. Effective data scientists must also be skilled at drawing out the <em>actual need</em> from underneath the <em>stated need</em>.</p>
+
+<p>The second half of the talk, where we lay out a framework for structuring scope conversations, was drawn from previous talks Max has given. This iteration of the talk saw two new things. First, I added more justification and urgency around why you should care about doing this well. I imagine that everyone who chose to be in our session already believes this, but chances are extremely good that there are <em>other people</em> in their organization that are skeptical. Hopefully our arguments are portable enough that attendees can persuade their coworkers and managers.</p>
+
+<p>The second thing I added were symptoms of scoping poorly. Just as it's difficult to see that you're in the Matrix when you're in it, it's difficult to know that you're bad at scoping when you're bad at it. The presentation has four red flags so you can spot weak scoping and have the language to address it. The nice thing about these is that once you give them a name, everyone on your team is more likely to spot them and call them out.</p>
+
+<p>O'Reilly is working on the video and we are working on the annotated slides. I'll update this post when they're out. In the meantime, please enjoy this visualization of the most popular American names over time:</p>
+
+<iframe src="http://giphy.com/embed/5xtDarJpumZXFpm3tf2?html5=true" width="480" height="303" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<p>I spent most of the rest of the conference on the "hallway track" meeting new folks and catching up with colleagues from around the world. The sessions look <em>awesome</em> and I bookmarked a bunch of them to watch later. Literally too many to list right now. Will pare them down the list for the next post.</p>
+]]></content>
+  </entry>
+  
+</feed>

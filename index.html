@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="I should really have switched to vim ten years ago when I first started using the command line. But vim has a hell of a hill to get over, and I never &hellip;">
+  <meta name="description" content="Last week I attended O&#8217;Reilly&#8217;s data conference, Strata. I had a great time, including co-presenting with my colleague Max Shron on the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/21/our-talk-at-strata/">Our Talk at Strata</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-21T10:11:00-04:00" pubdate data-updated="true">Oct 21<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last week I attended O&#8217;Reilly&#8217;s data conference, Strata. I had a great time, including  co-presenting with my colleague <a href="http://shron.net">Max Shron</a> on the topic of <a href="http://strataconf.com/stratany2014/public/schedule/detail/36730">Solving the Right Problem</a>.</p>
+
+<p>Based off the material in <a href="http://shop.oreilly.com/product/0636920029182.do">his book</a>, we argued that it is easy to crunch some numbers and feel like you&#8217;re doing data science, but in the end to come up empty-handed since you didn&#8217;t pick the right problem in the first place. This is a particular danger since data scientists love data and programming and the latest tools, so it can be very tempting to just dive into the data set without first considering where you&#8217;ll end up.</p>
+
+<p>We looked to the design world as a case study for how other disciplines have handled this very same problem, and propose that it&#8217;s not enough to be technically and mathematically competent. Effective data scientists must also be skilled at drawing out the <em>actual need</em> from underneath the <em>stated need</em>.</p>
+
+<p>The second half of the talk, where we lay out a framework for structuring scope conversations, was drawn from previous talks Max has given. This iteration of the talk saw two new things. First, I added more justification and urgency around why you should care about doing this well. I imagine that everyone who chose to be in our session already believes this, but chances are extremely good that there are <em>other people</em> in their organization that are skeptical. Hopefully our arguments are portable enough that attendees can persuade their coworkers and managers.</p>
+
+<p>The second thing I added were symptoms of scoping poorly. Just as it&#8217;s difficult to see that you&#8217;re in the Matrix when you&#8217;re in it, it&#8217;s difficult to know that you&#8217;re bad at scoping when you&#8217;re bad at it. The presentation has four red flags so you can spot weak scoping and have the language to address it. The nice thing about these is that once you give them a name, everyone on your team is more likely to spot them and call them out.</p>
+
+<p>O&#8217;Reilly is working on the video and we are working on the annotated slides. I&#8217;ll update this post when they&#8217;re out. In the meantime, please enjoy this visualization of the most popular American names over time:</p>
+
+<iframe src="http://giphy.com/embed/5xtDarJpumZXFpm3tf2?html5=true" width="480" height="303" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<p>I spent most of the rest of the conference on the &#8220;hallway track&#8221; meeting new folks and catching up with colleagues from around the world. The sessions look <em>awesome</em> and I bookmarked a bunch of them to watch later. Literally too many to list right now. Will pare them down the list for the next post.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -682,86 +733,6 @@ Above all: have fun, learn lots, and never graduate.
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/11/turbocharging-octopress/">Turbocharging Octopress</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-11T19:05:00-04:00" pubdate data-updated="true">Mar 11<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This blog is powered by <a href="http://octopress.org/">Octopress</a>, which is basically a set of <code>rake</code> tasks, themes, and other add-ons generate a blog from Markdown posts. It&#8217;s in turn powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</p>
-
-<p>The documentation is generally pretty good, but they didn&#8217;t really explain one fundamental thing. It&#8217;s pretty simple once you dig into the <code>Rakefile</code>, but here&#8217;s a quick explanation if you just want to get up and running.</p>
-
-<h3>WTF is going on with the branches?</h3>
-
-<p>On github, you will have two branches: <code>source</code> and <code>master</code>. But locally:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git br
-</span><span class='line'>* source</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Huh. Interesting. Locally, you <em>only</em> have one branch: <code>source</code>.  Wat?</p>
-
-<p>Basically, <code>source</code> holds your posts in Markdown and other files <em>before</em> they are transmogrified into HTML. Once you run <code>rake generate</code>, Octopress will generate all the HTML &amp; CSS and put it all in <code>/public</code>.</p>
-
-<p>And when you run <code>rake deploy</code>, Octopress pushes the contents of <code>/public</code> (on <em>local</em> branch <code>source</code>) to the home directory (on <em>remote</em> branch <code>master</code>).</p>
-
-<p>So: each time you finish a post, run BOTH <code>rake deploy</code> to deploy and <code>git push origin source</code> to back up your source files to github.</p>
-
-<h3>Sublime Text &lt;3 Markdown</h3>
-
-<p>So you&#8217;re writing your blog posts in Markdown like a boss. There are a few things you can do to make Sublime Text 2 a lean, mean blogging machine:</p>
-
-<p><strong>Custom themes</strong>. For example, <a href="http://brettterpstra.com/2012/05/17/markdown-editing-for-sublime-text-2-humble-beginnings/">MarkdownEditing</a>, a series of custom themes and shortcuts for Markdown. (Hint: installing Package Control first will make this easier)</p>
-
-<p><strong>Spell check.</strong>
-Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.html">Hunspell</a> for spell checking, the same library used in Word. This process was a bit more convoluted:</p>
-
-<ol>
-<li>Command-shift-p in ST2 to open Package Control</li>
-<li>Choose &#8220;Add Repo&#8221;. Paste in <code>http://www.sublimetext.com/docs/2/spell_checking.html</code></li>
-<li>Command-shift-p again. Choose &#8220;Install Package,&#8221; then &#8220;Dictionaries&#8221;</li>
-<li>Find your preferences in Preferences > Package Settings > Markdown Editing > Markdown Settings - User</li>
-<li>Add the following to the settings file:
-
-<pre><code> "spell_check": true,
- "dictionary": "Packages/Language - English/en_US.dic"
-</code></pre></li>
-<li>Restart Sublime Text. Observe red squigglies when you edit Markdown.</li>
-<li>Profit</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -777,6 +748,10 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/21/our-talk-at-strata/">Our Talk at Strata</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/27/switching-to-vim/">I&#8217;m switching to vim</a>
       </li>
     
@@ -790,10 +765,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
     
       <li class="post">
         <a href="/blog/2014/01/26/unexpected-lessons-from-ordcamp/">Unexpected Lessons from ORDCamp: Unstructure is the Best Structure</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/">Blaggregator now has comments!</a>
       </li>
     
   </ul>

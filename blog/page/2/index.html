@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="David and I paired this week to build a Markov chain generator. It analyzes 15MB of old Hacker News headlines and generates completely new headlines &hellip;">
+  <meta name="description" content="This blog is powered by Octopress, which is basically a set of rake tasks, themes, and other add-ons generate a blog from Markdown posts. It&#8217;s &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,86 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/11/turbocharging-octopress/">Turbocharging Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-11T19:05:00-04:00" pubdate data-updated="true">Mar 11<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This blog is powered by <a href="http://octopress.org/">Octopress</a>, which is basically a set of <code>rake</code> tasks, themes, and other add-ons generate a blog from Markdown posts. It&#8217;s in turn powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</p>
+
+<p>The documentation is generally pretty good, but they didn&#8217;t really explain one fundamental thing. It&#8217;s pretty simple once you dig into the <code>Rakefile</code>, but here&#8217;s a quick explanation if you just want to get up and running.</p>
+
+<h3>WTF is going on with the branches?</h3>
+
+<p>On github, you will have two branches: <code>source</code> and <code>master</code>. But locally:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git br
+</span><span class='line'>* source</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Huh. Interesting. Locally, you <em>only</em> have one branch: <code>source</code>.  Wat?</p>
+
+<p>Basically, <code>source</code> holds your posts in Markdown and other files <em>before</em> they are transmogrified into HTML. Once you run <code>rake generate</code>, Octopress will generate all the HTML &amp; CSS and put it all in <code>/public</code>.</p>
+
+<p>And when you run <code>rake deploy</code>, Octopress pushes the contents of <code>/public</code> (on <em>local</em> branch <code>source</code>) to the home directory (on <em>remote</em> branch <code>master</code>).</p>
+
+<p>So: each time you finish a post, run BOTH <code>rake deploy</code> to deploy and <code>git push origin source</code> to back up your source files to github.</p>
+
+<h3>Sublime Text &lt;3 Markdown</h3>
+
+<p>So you&#8217;re writing your blog posts in Markdown like a boss. There are a few things you can do to make Sublime Text 2 a lean, mean blogging machine:</p>
+
+<p><strong>Custom themes</strong>. For example, <a href="http://brettterpstra.com/2012/05/17/markdown-editing-for-sublime-text-2-humble-beginnings/">MarkdownEditing</a>, a series of custom themes and shortcuts for Markdown. (Hint: installing Package Control first will make this easier)</p>
+
+<p><strong>Spell check.</strong>
+Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.html">Hunspell</a> for spell checking, the same library used in Word. This process was a bit more convoluted:</p>
+
+<ol>
+<li>Command-shift-p in ST2 to open Package Control</li>
+<li>Choose &#8220;Add Repo&#8221;. Paste in <code>http://www.sublimetext.com/docs/2/spell_checking.html</code></li>
+<li>Command-shift-p again. Choose &#8220;Install Package,&#8221; then &#8220;Dictionaries&#8221;</li>
+<li>Find your preferences in Preferences > Package Settings > Markdown Editing > Markdown Settings - User</li>
+<li>Add the following to the settings file:
+
+<pre><code> "spell_check": true,
+ "dictionary": "Packages/Language - English/en_US.dic"
+</code></pre></li>
+<li>Restart Sublime Text. Observe red squigglies when you edit Markdown.</li>
+<li>Profit</li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -414,6 +494,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/21/our-talk-at-strata/">Our Talk at Strata</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/08/27/switching-to-vim/">I&#8217;m switching to vim</a>
       </li>
     
@@ -427,10 +511,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/26/unexpected-lessons-from-ordcamp/">Unexpected Lessons from ORDCamp: Unstructure is the Best Structure</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/">Blaggregator now has comments!</a>
       </li>
     
   </ul>
