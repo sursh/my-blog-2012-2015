@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2014-11-22T00:57:01-05:00</updated>
+  <updated>2014-11-22T13:45:49-05:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Thanks, PyData!]]></title>
+    <link href="http://sursh.github.com/blog/2014/11/22/thanks/"/>
+    <updated>2014-11-22T13:41:00-05:00</updated>
+    <id>http://sursh.github.com/blog/2014/11/22/thanks</id>
+    <content type="html"><![CDATA[<p>I just gave a talk at PyData NYC to an absolutely fantastic audience. I&#8217;ll write more about it later. If you&#8217;re looking for the slides, links, and books I recommended, they are <a href="talks/data-audit">here</a>.</p>
+
+<p>I&#8217;m really curious to hear your war stories, questions, which parts of the talk helped, everything! Please feel free to reach out to my by <a href="http://twitter.com/sashalaundy">Twitter</a> or email (sasha.laundy at gmail.com).</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Our Talk at Strata]]></title>

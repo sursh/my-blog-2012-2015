@@ -9,7 +9,7 @@
   <meta name="author" content="Sasha Laundy">
 
   
-  <meta name="description" content="This blog is powered by Octopress, which is basically a set of rake tasks, themes, and other add-ons generate a blog from Markdown posts. It&#8217;s &hellip;">
+  <meta name="description" content="TL;DR. I noticed a bug in Octopress. In fixing it, I found a separate, truly spectacular error, and learned a lot of interesting things about bash. I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,143 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/25/on-rakefiles-and-rabbit-holes/">On Rakefiles and Rabbit Holes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-25T15:34:00-04:00" pubdate data-updated="true">Mar 25<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>TL;DR.</strong> I noticed a bug in Octopress. In fixing it, I found a separate, truly spectacular error, and learned a lot of interesting things about bash. I would never have learned so much outside of Hacker School, since it gives me the time and space to open up the box.</p>
+
+<h2>The original bug.</h2>
+
+<p>Octopress&#8217; <code>rake preview</code> lets you preview your post in the browser before deploying. It spawns Rack to serve local requests and Guard to watch for file changes. Guard in turn spawns Fsevent to do the actual watching.</p>
+
+<figure class='code'><figcaption><span>Handy pstree is handy.</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>pstree
+</span><span class='line'>...
+</span><span class='line'> | | <span class="se">\-</span>+<span class="o">=</span> 31340 root login -pf sasha
+</span><span class='line'> | |   <span class="se">\-</span>+<span class="o">=</span> 31341 sasha -bash
+</span><span class='line'> | |     <span class="se">\-</span>+<span class="o">=</span> 31430 sasha ruby /.../ruby-1.9.3-p374/bin/rake
+</span><span class='line'> | |       |-+- 31433 sasha ruby /.../ruby-1.9.3-p374/bin/gua
+</span><span class='line'> | |       | <span class="se">\-</span>-<span class="o">=</span> 31443 sasha /.../ruby-1.9.3-p374/gems/rb-fs
+</span><span class='line'> | |       <span class="se">\-</span>-- 31434 sasha <span class="o">(</span>ruby<span class="o">)</span>
+</span><span class='line'>...
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But when you <code>crtl-C</code>, Fsevent stays running in the background until you <code>kill</code> it or modify a file in the watched dir. This throws a <code>TCPServer Error</code> if you try to run <code>rake preview</code> a second time. Sad pandas.</p>
+
+<p>Initially I had no idea what was going on here. I&#8217;ve dabbled in Ruby but not modified a Rakefile before. I learned <code>ps</code> and <code>kill</code> ten years ago, but didn&#8217;t know much about what was going on under the hood. Ripe conditions for learning a ton.</p>
+
+<p><strong>This is what I love about Hacker School</strong>. I have the time and space to go down these rabbit holes. At a startup, priority goes to shipping code. <strong>Here, shipping code is the means, not the end.</strong></p>
+
+<p>In the end, the actual bug was pretty small: when you interrupt <code>rake</code>, it passes <code>kill 9</code> to guard. Guard ends itself but doesn&#8217;t properly terminate its child process fsevent`.</p>
+
+<figure class='code'><figcaption><span>Rake preview catching interrupts</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="nb">trap</span><span class="p">(</span><span class="s2">&quot;INT&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="o">[</span><span class="n">guardPid</span><span class="p">,</span> <span class="n">rackupPid</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">pid</span><span class="o">|</span> <span class="no">Process</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span> <span class="k">rescue</span> <span class="ss">Errno</span><span class="p">:</span><span class="ss">:ESRCH</span> <span class="p">}</span>
+</span><span class='line'>    <span class="nb">exit</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This can be duct-taped together by sending <code>3</code> (QUIT) instead of <code>9</code> (KILL) to Guard, but we&#8217;re asking the Guard team if this is a known issue. But it gets better!</p>
+
+<h2>Curiouser and curiouser</h2>
+
+<p>Things got <em>really</em> weird when I was playing around with the different exit codes. The Ruby documentation says that if you pass <code>kill</code> a negative argument, it will kill the entire group of processes, not just the child process. Promising!</p>
+
+<p>However, it broke very spectacularly. If you want to follow along, grab the development branch of Octopress, currently 2.1:</p>
+
+<pre><code>$ git clone -b 2.1 https://github.com/imathis/octopress.git
+</code></pre>
+
+<p>Find the <code>preview</code> task and change the message it passes on interrupt from 9 to -3:</p>
+
+<figure class='code'><figcaption><span>Line 161 as of this writing</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="nb">trap</span><span class="p">(</span><span class="s2">&quot;INT&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="o">[</span><span class="n">guardPid</span><span class="p">,</span> <span class="n">rackupPid</span><span class="o">].</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">pid</span><span class="o">|</span> <span class="no">Process</span><span class="o">.</span><span class="n">kill</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span> <span class="k">rescue</span> <span class="ss">Errno</span><span class="p">:</span><span class="ss">:ESRCH</span> <span class="p">}</span>
+</span><span class='line'>    <span class="nb">exit</span> <span class="mi">0</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then run <code>rake preview</code> (you will have to run <code>rake install</code> the first time). Wait until you see Guard&#8217;s prompt (powered by Pry):</p>
+
+<pre><code>16:10:05 - INFO - Guard is now watching at '/Users/sasha/code/octopress'
+[1] guard(main)&gt; 
+</code></pre>
+
+<p>Then Control-C. You will see some lines of error output, and then BOTH guard and bash&#8217;s prompt, instead of one or the other. Wat!</p>
+
+<pre><code>[2] guard(main)&gt; SASHAs-MacBook-Air-2:octopress sasha$ 
+</code></pre>
+
+<p>Weird! Press any key that sends input. PRY EXPLODES. Press enter and you get a bash prompt back, but now you can&#8217;t see anything you type. It&#8217;s still getting to bash (try <code>ls &lt;enter&gt;</code>) but some things, like control-L, no longer work.</p>
+
+<p>Lolwut?</p>
+
+<h2>Down the rabbit hole</h2>
+
+<p>So I started reading about <a href="http://www.linusakesson.net/programming/tty/">TTY</a> and <a href="http://en.wikipedia.org/wiki/Unix_signal">POSIX signals</a> and using <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?stty">stty</a>. Interesting stuff, particularly the history of our terminal evolving from ticker tape outputs.</p>
+
+<p>You can also change all sorts of wacky things about your terminal with <code>stty</code>. Try <code>stty -echo</code> (<code>stty echo</code> to undo it). This explains why I wasn&#8217;t able to see my own typing after the Pry explosion - when control was reluctantly handed back to bash, the flags on my terminal weren&#8217;t properly reset, including the flag to use raw (non-canonical) input processing, which is why it won&#8217;t process things like <code>control-l</code> until you hit enter.</p>
+
+<p>I didn&#8217;t find all the answers in my reading, but I&#8217;m asking <em>significantly</em> better questions:</p>
+
+<ul>
+<li><p>How groups are being used is unclear. I expected the process group to inherit its gid from the parent process and to be killed cleanly by passing a negative argument to <code>kill</code>, but that didn&#8217;t work. Passing <code>-3</code> kills Rack but only mortally wounds Guard.</p></li>
+<li><p>One remaining mystery: why is the bash prompt printed to the terminal after the Guard prompt when Guard is still running? Maybe control is passed from Guard to bash and then back to Guard?</p></li>
+<li><p>It seems that Pry is getting something unexpected from its stdin, which triggers its explosion, which may or may not be coming from bash. But how to intercept it?</p></li>
+<li><p>The Readlines library defines some bash shortcuts, like mapping <code>ctrl-l</code> to <code>clear</code>, but lets you override them with an .inputrc. So you can do awesome things to your prompt like adjusts how <code>ctrl-w</code> works. There are also vim and emacs modes for bash.</p></li>
+</ul>
+
+
+<p><strong>Stuff I learned:</strong> a little Ruby, Rakefiles, POSIX signals, the history of TTY, more about stdin, stdout, and stderr, stty, working with pids, gids, and the Process module in Ruby. And my first accepted (albeit one-character) pull request of Hacker School, which is certainly the highest learning-to-LOC ratio I can think of.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -495,6 +632,10 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/22/thanks/">Thanks, PyData!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/21/our-talk-at-strata/">Our Talk at Strata</a>
       </li>
     
@@ -508,10 +649,6 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
     
       <li class="post">
         <a href="/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/">The Slacker Developer&#8217;s Guide to the Mavericks Upgrade</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/26/unexpected-lessons-from-ordcamp/">Unexpected Lessons from ORDCamp: Unstructure is the Best Structure</a>
       </li>
     
   </ul>
