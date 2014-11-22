@@ -78,4 +78,12 @@
         <loc>http://sursh.github.com/robots.txt</loc>
         <lastmod>2013-03-26T17:44:02-04:00</lastmod>
     </url>
+    <url>
+        <loc>http://sursh.github.com/talks/data-audit/</loc>
+        <lastmod>2014-11-22T00:51:38-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/talks/</loc>
+        <lastmod>2014-11-22T00:45:00-05:00</lastmod>
+    </url>
 </urlset>
