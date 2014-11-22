@@ -25,7 +25,7 @@ Coming shortly after the talk.
 
 ## Handy Tools
 
-[csvkit](csvkit.readthedocs.org)
+[csvkit](http://csvkit.readthedocs.org)
 
 [bitly data hacks](https://github.com/bitly/data_hacks)
 
