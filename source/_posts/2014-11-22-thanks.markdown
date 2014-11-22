@@ -8,4 +8,4 @@ categories:
 
 I just gave a talk at PyData NYC to an absolutely fantastic audience. I'll write more about it later. If you're looking for the slides, links, and books I recommended, they are [here](talks/data-audit). 
 
-I'm really curious to hear your war stories, questions, which parts of the talk helped, everything! Please feel free to reach out to my by [Twitter](http://twitter.com/sashalaundy) or email (sasha.laundy at gmail.com).
+I'm really curious to hear your war stories, questions, which parts of the talk helped, everything! Please feel free to reach out to my by [Twitter](http://twitter.com/sashalaundy) or [email](mailto:sasha.laundy@gmail.com).
