@@ -19,7 +19,9 @@ Coming as soon as I get it from conference organizers.
 
 ## Slides
 
-Coming shortly after the talk.
+<script async class="speakerdeck-embed" data-id="41ed4e70564201328e7a02d32ce16bb5" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
+
+There's a lot of the talk in the talk itself that doesn't appear in the slides. I recommend watching the video instead once it's available. 
 
 ## Recommended Books
 
@@ -35,4 +37,4 @@ Coming shortly after the talk.
 
 ## Questions, reactions, and followup
 
-[Tweets about the talk](https://storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you)
+<div class="storify"><iframe src="//storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you/embed?border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you.js?border=false"></script><noscript>[<a href="//storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you" target="_blank">View the story "HOWTO Make Your Future Data Science Team Love You" on Storify</a>]</noscript></div>
