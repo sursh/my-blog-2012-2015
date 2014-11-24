@@ -33,4 +33,6 @@ Coming shortly after the talk.
 
 [bitly data hacks](https://github.com/bitly/data_hacks)
 
-Please let me know if I've missed any good resources that would be useful to include!
+## Questions, reactions, and followup
+
+[Tweets about the talk](https://storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you)
