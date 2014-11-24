@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-[PyData NYC, Nov 22 2014](http://pydata.org/nyc2014/schedule/)
+My talk at [PyData NYC, Nov 22 2014](http://pydata.org/nyc2014/schedule/)
 
 ## Abstract
 
