@@ -15,7 +15,7 @@ It's a common story. Software developers are working hard to get a project off t
 
 ## Video
 
-Coming shortly after the talk.
+Coming as soon as I get it from conference organizers.
 
 ## Slides
 
@@ -33,4 +33,4 @@ Coming shortly after the talk.
 
 [bitly data hacks](https://github.com/bitly/data_hacks)
 
-Please let me know if I've missed any good resources that would be useful to include.
+Please let me know if I've missed any good resources that would be useful to include!
