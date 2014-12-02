@@ -37,4 +37,12 @@ There's a lot of the talk in the talk itself that doesn't appear in the slides. 
 
 ## Questions, reactions, and followup
 
+#### Blog posts that mention my talk
+
+[Michael Becker's PyData NYC recap](https://mdbecker.github.io/blog/2014/11/24/pydata-nyc-the-really-short-version/)
+
+[Julia Evan's PyData NYC recap](http://jvns.ca/blog/2014/11/27/pydata-nyc-i-gave-a-machine-learning-talk-yay/)
+
+#### Tweets
+
 <div class="storify"><iframe src="//storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you/embed?border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you.js?border=false"></script><noscript>[<a href="//storify.com/SashaLaundy/howto-make-your-future-data-science-team-love-you" target="_blank">View the story "HOWTO Make Your Future Data Science Team Love You" on Storify</a>]</noscript></div>
