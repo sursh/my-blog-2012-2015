@@ -6,6 +6,6 @@ comments: true
 categories: 
 ---
 
-I just gave a talk at PyData NYC to an absolutely fantastic audience. [The slides, links, and books I recommended are here](talks/data-audit). 
+I just gave a talk at PyData NYC to an absolutely fantastic audience. [The slides, links, and books I recommended are here](http://blog.sashalaundy.com/talks/data-audit/). 
 
 I'm really curious to hear your war stories, questions, which parts of the talk helped, everything! Please feel free to reach out to my by [Twitter](http://twitter.com/sashalaundy) or [email](mailto:sasha.laundy@gmail.com).
