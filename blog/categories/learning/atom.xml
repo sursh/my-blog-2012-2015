@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: learning | Sasha Laundy]]></title>
+  <link href="http://sursh.github.com/blog/categories/learning/atom.xml" rel="self"/>
+  <link href="http://sursh.github.com/"/>
+  <updated>2014-12-04T11:40:25-05:00</updated>
+  <id>http://sursh.github.com/</id>
+  <author>
+    <name><![CDATA[Sasha Laundy]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The best lesson from Hacker School is hiding in plain sight]]></title>
+    <link href="http://sursh.github.com/blog/2014/12/05/the-best-lesson-from-hacker-school-is-hiding-in-plain-sight/"/>
+    <updated>2014-12-05T07:39:00-05:00</updated>
+    <id>http://sursh.github.com/blog/2014/12/05/the-best-lesson-from-hacker-school-is-hiding-in-plain-sight</id>
+    <content type="html"><![CDATA[<p>Last spring I attended <a href="http://hackerschool.com">Hacker School</a>, which is a 12-week retreat for programmers in NYC. It is a truly fantastic program and many other Hacker Schoolers have written lots of nice things about the program and advice to new folks that you can find elsewhere on the internet.</p>
+
+<p>The reviews mention the friendly environment, curious peers with a breathtakingly wide variety of skills and interests, the fanatical focus on projects that push deeper understanding, and the profound intellectual transformation of the experience.</p>
+
+<p>The advice to new admits, <a href="https://medium.com/hacker-school/how-to-get-the-most-out-of-hacker-school-ab08782397f8">including mine,</a> generally also addresses the structureless nature of the program: there is no curriculum, no set goals, no staff of 'teachers' to tell you what to learn each morning. Many people find this daunting, and in many 'end of batch' recap blog posts I see people regretting that they didn't 'figure out' how to navigate this until late in the batch and lament the 'wasted time.'</p>
+
+<p>But <em>the discomfort and the time spent floundering are precisely the point. </em>They are what makes Hacker School so valuable for you, long after you walk out the door on your last day.</p>
+
+<p>In the space between the step-by-step beginner tutorial and your little project that ends up on the top of Hacker News is where you have to find the path for yourself. In the outside world, in your job, in your side project time, in the hours left in your life, who is going to tell you what path to follow and put a curriculum in front of you each day? To make a real difference and push the human race forward, you have to learn to blaze trails into the unknown, pick up new skills quickly, and <em>decide for yourself</em> what to learn next.</p>
+
+<p>Hacker School does this by getting out of your way. They create a hyperbaric chamber for learning by fanatical obsession with the perfect environment. They pick curious and generous peers, hire thoughtful and energetic facilitators, remove extrinsic motivators like interview preparation as much as they can and then they <em>get the hell out of your way.</em></p>
+
+<p>They let you chart your own course, even if that means a little floundering as <em>the floundering is an essential part of this learning.</em> You are figuring out what excites you. How to balance the lure of  the new and shiny with the need to buckle down and polish core skills. How to explore when you have no idea what lies ahead. How to use source code and fellow programmers for help when you don't understand. And how to tell when you have wrung the last bit of learning and enjoyment out of a project.</p>
+
+<p>Figuring out how to chart this path for yourself is much harder back out in the world where you are faced with distractions and uncurious peers, unhelpful or non-existent mentors, pressure to ship uninteresting code for other people, and bills to pay. A 3-month gap where you can pursue anything that interests you is a breath of fresh air, and in that ideal environment have a very real shot at learning how to learn.</p>
+]]></content>
+  </entry>
+  
+</feed>
