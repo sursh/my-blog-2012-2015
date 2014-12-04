@@ -6,7 +6,7 @@ comments: true
 categories: [Hacker School, learning] 
 ---
 
-Last spring I attended [Hacker School](http://hackerschool.com), which is a 12-week retreat for programmers in NYC. It is a truly fantastic program and many other Hacker Schoolers have written lots of nice things about the program and advice to new folks that you can find elsewhere on the internet. 
+Last spring I attended [Hacker School](http://hackerschool.com), which is a 12-week retreat for programmers in NYC. It is a truly fantastic program and many other Hacker Schoolers have written lots of nice things about the program and advice to new folks that you can find [elsewhere on the internet](https://www.hackerschool.com/blog/60-23-hacker-schoolers-and-residents-on-their-experiences-at-hacker-school). 
 
 The reviews mention the friendly environment, curious peers with a breathtakingly wide variety of skills and interests, the fanatical focus on projects that push deeper understanding, and the profound intellectual transformation of the experience. 
 
