@@ -19,6 +19,3 @@ I will be giving a new-and-improved version of "HOWTO Make Your Future Data Scie
 
 - PyData NYC: [HOWTO Make Your Future Data Scientist Love You](data-audit)
 
-## February 2015
-
-- Strata
