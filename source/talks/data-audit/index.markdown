@@ -15,13 +15,13 @@ It's a common story. Software developers are working hard to get a project off t
 
 ## Video
 
-Coming as soon as I get it from conference organizers.
+<iframe width="560" height="315" src="//www.youtube.com/embed/dOwmU-5ShJs" frameborder="0" allowfullscreen></iframe>
 
 ## Slides
 
 <script async class="speakerdeck-embed" data-id="41ed4e70564201328e7a02d32ce16bb5" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
-There's a lot of the talk in the talk itself that doesn't appear in the slides. I recommend watching the video instead once it's available. 
+There's a lot of the talk in the talk itself that doesn't appear in the slides. I recommend watching the video.  
 
 ## Recommended Books
 
