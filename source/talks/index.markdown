@@ -9,8 +9,6 @@ footer: true
 ### TODAY: [HOWTO Make Your Future Data Scientist Love You](data-vitals)
 O'Reilly Strata & Hadoop World in San Jose, CA, February 2015. 
 
-TK put the abstract here!
-
 New and improved!
 
 ### Upcoming: PyCon in Montreal, Canada, April 2015. 
