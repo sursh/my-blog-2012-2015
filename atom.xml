@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2015-01-13T15:52:03-05:00</updated>
+  <updated>2015-02-19T11:16:49-08:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -14,9 +14,20 @@
 
   
   <entry>
+    <title type="html"><![CDATA[My talk at Strata San Jose]]></title>
+    <link href="http://sursh.github.com/blog/2015/02/19/my-talk-at-strata-san-jose/"/>
+    <updated>2015-02-19T11:12:00-08:00</updated>
+    <id>http://sursh.github.com/blog/2015/02/19/my-talk-at-strata-san-jose</id>
+    <content type="html"><![CDATA[<p>Looking for the links and book recommendations from today&#8217;s talk at Strata? <a href="http://sursh.github.com/talks/data-vitals">Here you go</a>.</p>
+
+<p>Make sure to bookmark the page as I&#8217;ll be adding more later today.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The best lesson from Hacker School is hiding in plain sight]]></title>
     <link href="http://sursh.github.com/blog/2014/12/05/the-best-lesson-from-hacker-school-is-hiding-in-plain-sight/"/>
-    <updated>2014-12-05T07:39:00-05:00</updated>
+    <updated>2014-12-05T07:39:00-08:00</updated>
     <id>http://sursh.github.com/blog/2014/12/05/the-best-lesson-from-hacker-school-is-hiding-in-plain-sight</id>
     <content type="html"><![CDATA[<p>Last spring I attended <a href="http://hackerschool.com">Hacker School</a>, which is a 12-week retreat for programmers in NYC. It is a truly fantastic program and many other Hacker Schoolers have written lots of nice things about the program and advice to new folks that you can find <a href="https://www.hackerschool.com/blog/60-23-hacker-schoolers-and-residents-on-their-experiences-at-hacker-school">elsewhere on the internet</a>.</p>
 
@@ -39,7 +50,7 @@
   <entry>
     <title type="html"><![CDATA[Thanks, PyData!]]></title>
     <link href="http://sursh.github.com/blog/2014/11/22/thanks/"/>
-    <updated>2014-11-22T13:41:00-05:00</updated>
+    <updated>2014-11-22T13:41:00-08:00</updated>
     <id>http://sursh.github.com/blog/2014/11/22/thanks</id>
     <content type="html"><![CDATA[<p>I just gave a talk at PyData NYC to an absolutely fantastic audience. <a href="http://sursh.github.com/talks/data-audit/">The slides, links, and books I recommended are here</a>.</p>
 
@@ -50,7 +61,7 @@
   <entry>
     <title type="html"><![CDATA[Our Talk at Strata]]></title>
     <link href="http://sursh.github.com/blog/2014/10/21/our-talk-at-strata/"/>
-    <updated>2014-10-21T10:11:00-04:00</updated>
+    <updated>2014-10-21T10:11:00-07:00</updated>
     <id>http://sursh.github.com/blog/2014/10/21/our-talk-at-strata</id>
     <content type="html"><![CDATA[<p>Last week I attended O&#8217;Reilly&#8217;s data conference, Strata. I had a great time, including  co-presenting with my colleague <a href="http://shron.net">Max Shron</a> on the topic of <a href="http://strataconf.com/stratany2014/public/schedule/detail/36730">Solving the Right Problem</a>.</p>
 
@@ -74,7 +85,7 @@
   <entry>
     <title type="html"><![CDATA[I'm switching to vim]]></title>
     <link href="http://sursh.github.com/blog/2014/08/27/switching-to-vim/"/>
-    <updated>2014-08-27T09:31:00-04:00</updated>
+    <updated>2014-08-27T09:31:00-07:00</updated>
     <id>http://sursh.github.com/blog/2014/08/27/switching-to-vim</id>
     <content type="html"><![CDATA[<p>I should really have switched to vim ten years ago when I first started using the command line. But vim has a hell of a hill to get over, and I never made it high enough to keep going. I&#8217;m revisiting it because I love keyboard shortcuts! Once they&#8217;re in your brain, you hardly have to think to move the whole program around at a blazing speed. Then you get to feel like a wizard.</p>
 
@@ -96,7 +107,7 @@
   <entry>
     <title type="html"><![CDATA[HOWTO force all Django users to log out with the Django ORM]]></title>
     <link href="http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/"/>
-    <updated>2014-08-26T09:42:00-04:00</updated>
+    <updated>2014-08-26T09:42:00-07:00</updated>
     <id>http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm</id>
     <content type="html"><![CDATA[<p>I recently hit a bug with <a href="http://blaggregator.us">Blaggregator</a>, a Django app I&#8217;m running in production on Heroku, and the fix needed each user to log out and then log back in for it to take effect.</p>
 
@@ -143,7 +154,7 @@
   <entry>
     <title type="html"><![CDATA[The Slacker Developer's Guide to the Mavericks Upgrade]]></title>
     <link href="http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/"/>
-    <updated>2014-05-14T22:00:00-04:00</updated>
+    <updated>2014-05-14T22:00:00-07:00</updated>
     <id>http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade</id>
     <content type="html"><![CDATA[<p>I am not an early adopter.</p>
 
@@ -177,7 +188,7 @@
   <entry>
     <title type="html"><![CDATA[Unexpected Lessons from ORDCamp: Unstructure is the Best Structure]]></title>
     <link href="http://sursh.github.com/blog/2014/01/26/unexpected-lessons-from-ordcamp/"/>
-    <updated>2014-01-26T17:35:00-05:00</updated>
+    <updated>2014-01-26T17:35:00-08:00</updated>
     <id>http://sursh.github.com/blog/2014/01/26/unexpected-lessons-from-ordcamp</id>
     <content type="html"><![CDATA[<p>I had the pleasure of spending the weekend attending <a href="http://ordcamp.com">ORDCamp</a> in Chicago. It&#8217;s an unconference bringing together a wide range of artists, founders, engineers, educators, writers, and even a couple of beekeepers. I learned so many things I expected to learn (cool new ideas, tools, and stories) but the overall Gestalt experience brought several unexpected realizations.</p>
 
@@ -224,7 +235,7 @@
   <entry>
     <title type="html"><![CDATA[Blaggregator now has comments!]]></title>
     <link href="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/"/>
-    <updated>2013-06-11T15:40:00-04:00</updated>
+    <updated>2013-06-11T15:40:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash</id>
     <content type="html"><![CDATA[<p>We were having some great conversations about fellow Hacker Schoolers&#8217; blog posts in Humbug, but that channel is too high-volume for most alums.</p>
 
@@ -235,7 +246,7 @@
   <entry>
     <title type="html"><![CDATA[How to Get the Most out of Hacker School]]></title>
     <link href="http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/"/>
-    <updated>2013-05-30T18:52:00-04:00</updated>
+    <updated>2013-05-30T18:52:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school</id>
     <content type="html"><![CDATA[<p>Monday is the first day of the summer batch of <a href="http://hackerschool.com">Hacker School</a>. You and about 70 other bright-eyed and bushy-tailed programmers will be starting twelve amazing weeks together.</p>
 
@@ -283,7 +294,7 @@ Above all: have fun, learn lots, and never graduate.
   <entry>
     <title type="html"><![CDATA[Git + Autocomplete = Bliss]]></title>
     <link href="http://sursh.github.com/blog/2013/04/01/autocomplete-in-git/"/>
-    <updated>2013-04-01T18:39:00-04:00</updated>
+    <updated>2013-04-01T18:39:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/04/01/autocomplete-in-git</id>
     <content type="html"><![CDATA[<p><strong>Did you know that you can turn on autocomplete for git?</strong> A quick survey of other Hacker Schoolers turned up that most Linux distros come with this built in, but most Mac users didn&#8217;t have it installed.</p>
 
@@ -309,7 +320,7 @@ Above all: have fun, learn lots, and never graduate.
   <entry>
     <title type="html"><![CDATA[Demo code review]]></title>
     <link href="http://sursh.github.com/blog/2013/03/26/demo-code-review/"/>
-    <updated>2013-03-26T17:35:00-04:00</updated>
+    <updated>2013-03-26T17:35:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/03/26/demo-code-review</id>
     <content type="html"><![CDATA[<p>A big part of life at <a href="http://hackerschool.com">Hacker School</a> is code reviews. Sometimes facilitators review code but for the most part, it&#8217;s our super talented peers.</p>
 
@@ -326,7 +337,7 @@ Above all: have fun, learn lots, and never graduate.
   <entry>
     <title type="html"><![CDATA[On Rakefiles and Rabbit Holes]]></title>
     <link href="http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/"/>
-    <updated>2013-03-25T15:34:00-04:00</updated>
+    <updated>2013-03-25T15:34:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes</id>
     <content type="html"><![CDATA[<p><strong>TL;DR.</strong> I noticed a bug in Octopress. In fixing it, I found a separate, truly spectacular error, and learned a lot of interesting things about bash. I would never have learned so much outside of Hacker School, since it gives me the time and space to open up the box.</p>
 
@@ -436,7 +447,7 @@ Above all: have fun, learn lots, and never graduate.
   <entry>
     <title type="html"><![CDATA[Turbocharging Octopress]]></title>
     <link href="http://sursh.github.com/blog/2013/03/11/turbocharging-octopress/"/>
-    <updated>2013-03-11T19:05:00-04:00</updated>
+    <updated>2013-03-11T19:05:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/03/11/turbocharging-octopress</id>
     <content type="html"><![CDATA[<p>This blog is powered by <a href="http://octopress.org/">Octopress</a>, which is basically a set of <code>rake</code> tasks, themes, and other add-ons generate a blog from Markdown posts. It&#8217;s in turn powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</p>
 
@@ -489,7 +500,7 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <entry>
     <title type="html"><![CDATA[Crashing Heroku (or When Memory Management in Python Really Matters)]]></title>
     <link href="http://sursh.github.com/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters/"/>
-    <updated>2013-03-07T18:24:00-05:00</updated>
+    <updated>2013-03-07T18:24:00-08:00</updated>
     <id>http://sursh.github.com/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/maxlikely">David</a> and I paired this week to build a <a href="http://www.codinghorror.com/blog/2008/06/markov-and-you.html">Markov chain generator</a>. It analyzes 15MB of old Hacker News headlines and generates completely new headlines that really sound like they came from HN. You can <a href="https://twitter.com/HackerNewsOrNot">follow the Twitter bot</a> or <a href="https://github.com/sursh/markov-hacker-news">check out the code</a>.</p>
 
@@ -550,7 +561,7 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <entry>
     <title type="html"><![CDATA[Help us plug our memory leaks]]></title>
     <link href="http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks/"/>
-    <updated>2013-03-05T00:08:00-05:00</updated>
+    <updated>2013-03-05T00:08:00-08:00</updated>
     <id>http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks</id>
     <content type="html"><![CDATA[<p>David and I are running our app on Heroku, but it uses too much memory to run! <strong>Got any clever optimization suggestions?</strong></p>
 
@@ -833,7 +844,7 @@ Sublime Text 2 uses <a href="http://www.sublimetext.com/docs/2/spell_checking.ht
   <entry>
     <title type="html"><![CDATA[In Search of Funny Gibberish]]></title>
     <link href="http://sursh.github.com/blog/2013/03/04/in-search-of-funny-gibberish/"/>
-    <updated>2013-03-04T17:31:00-05:00</updated>
+    <updated>2013-03-04T17:31:00-08:00</updated>
     <id>http://sursh.github.com/blog/2013/03/04/in-search-of-funny-gibberish</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/maxlikely">David</a> and I paired this week to build a bot that analyzes 15MB of old Hacker News and generates completely new headlines that really sound like they came from HN. You can <a href="https://twitter.com/HackerNewsOrNot">follow the Twitter bot</a> or <a href="https://github.com/sursh/markov-hacker-news">check out our code</a>.</p>
 

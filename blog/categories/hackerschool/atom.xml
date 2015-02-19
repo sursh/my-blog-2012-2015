@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hackerschool | Sasha Laundy]]></title>
   <link href="http://sursh.github.com/blog/categories/hackerschool/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2015-01-13T15:52:03-05:00</updated>
+  <updated>2015-02-19T11:16:49-08:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Blaggregator now has comments!]]></title>
     <link href="http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/"/>
-    <updated>2013-06-11T15:40:00-04:00</updated>
+    <updated>2013-06-11T15:40:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash</id>
     <content type="html"><![CDATA[<p>We were having some great conversations about fellow Hacker Schoolers' blog posts in Humbug, but that channel is too high-volume for most alums.</p>
 
@@ -27,7 +27,7 @@
   <entry>
     <title type="html"><![CDATA[How to Get the Most out of Hacker School]]></title>
     <link href="http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/"/>
-    <updated>2013-05-30T18:52:00-04:00</updated>
+    <updated>2013-05-30T18:52:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school</id>
     <content type="html"><![CDATA[<p>Monday is the first day of the summer batch of <a href="http://hackerschool.com">Hacker School</a>. You and about 70 other bright-eyed and bushy-tailed programmers will be starting twelve amazing weeks together.</p>
 
@@ -75,7 +75,7 @@ Above all: have fun, learn lots, and never graduate.
   <entry>
     <title type="html"><![CDATA[Demo code review]]></title>
     <link href="http://sursh.github.com/blog/2013/03/26/demo-code-review/"/>
-    <updated>2013-03-26T17:35:00-04:00</updated>
+    <updated>2013-03-26T17:35:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/03/26/demo-code-review</id>
     <content type="html"><![CDATA[<p>A big part of life at <a href="http://hackerschool.com">Hacker School</a> is code reviews. Sometimes facilitators review code but for the most part, it's our super talented peers.</p>
 
@@ -92,7 +92,7 @@ Above all: have fun, learn lots, and never graduate.
   <entry>
     <title type="html"><![CDATA[On Rakefiles and Rabbit Holes]]></title>
     <link href="http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/"/>
-    <updated>2013-03-25T15:34:00-04:00</updated>
+    <updated>2013-03-25T15:34:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes</id>
     <content type="html"><![CDATA[<p><strong>TL;DR.</strong> I noticed a bug in Octopress. In fixing it, I found a separate, truly spectacular error, and learned a lot of interesting things about bash. I would never have learned so much outside of Hacker School, since it gives me the time and space to open up the box.</p>
 
@@ -191,7 +191,7 @@ exit 0
   <entry>
     <title type="html"><![CDATA[Crashing Heroku (or When Memory Management in Python Really Matters)]]></title>
     <link href="http://sursh.github.com/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters/"/>
-    <updated>2013-03-07T18:24:00-05:00</updated>
+    <updated>2013-03-07T18:24:00-08:00</updated>
     <id>http://sursh.github.com/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/maxlikely">David</a> and I paired this week to build a <a href="http://www.codinghorror.com/blog/2008/06/markov-and-you.html">Markov chain generator</a>. It analyzes 15MB of old Hacker News headlines and generates completely new headlines that really sound like they came from HN. You can <a href="https://twitter.com/HackerNewsOrNot">follow the Twitter bot</a> or <a href="https://github.com/sursh/markov-hacker-news">check out the code</a>.</p>
 

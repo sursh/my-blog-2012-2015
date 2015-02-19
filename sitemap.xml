@@ -2,98 +2,106 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://sursh.github.com/blog/2013/03/04/in-search-of-funny-gibberish/</loc>
-        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+        <lastmod>2013-03-26T14:44:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2013/03/05/help-us-plug-our-memory-leaks/</loc>
-        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+        <lastmod>2013-03-26T14:44:02-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://sursh.github.com/blog/2013/03/07/crashing-heroku-or-when-memory-management-in-python-really-matters/
         </loc>
-        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+        <lastmod>2013-03-26T14:44:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2013/03/11/turbocharging-octopress/</loc>
-        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+        <lastmod>2013-03-26T14:44:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/</loc>
-        <lastmod>2013-03-27T18:32:56-04:00</lastmod>
+        <lastmod>2013-03-27T15:32:56-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2013/03/26/demo-code-review/</loc>
-        <lastmod>2013-03-28T01:06:03-04:00</lastmod>
+        <lastmod>2013-03-27T22:06:03-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2013/04/01/autocomplete-in-git/</loc>
-        <lastmod>2013-04-02T01:28:52-04:00</lastmod>
+        <lastmod>2013-04-01T22:28:52-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://sursh.github.com/blog/2013/05/30/how-to-get-the-most-out-of-hacker-school/
         </loc>
-        <lastmod>2013-06-11T18:01:09-04:00</lastmod>
+        <lastmod>2013-06-11T15:01:09-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://sursh.github.com/blog/2013/06/11/hacker-school-slash-s-blaggregator-now-has-comments-slash/
         </loc>
-        <lastmod>2013-06-11T16:34:45-04:00</lastmod>
+        <lastmod>2013-06-11T13:34:45-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2014/01/26/unexpected-lessons-from-ordcamp/</loc>
-        <lastmod>2014-01-27T13:13:41-05:00</lastmod>
+        <lastmod>2014-01-27T10:13:41-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://sursh.github.com/blog/2014/05/14/the-slacker-developers-guide-to-the-mavericks-upgrade/
         </loc>
-        <lastmod>2014-06-13T21:56:14-04:00</lastmod>
+        <lastmod>2014-06-13T18:56:14-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://sursh.github.com/blog/2014/08/26/howto-force-all-django-users-to-log-out-with-the-django-orm/
         </loc>
-        <lastmod>2014-08-26T10:53:35-04:00</lastmod>
+        <lastmod>2014-08-26T07:53:35-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2014/08/27/switching-to-vim/</loc>
-        <lastmod>2014-08-27T09:36:29-04:00</lastmod>
+        <lastmod>2014-08-27T06:36:29-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2014/10/21/our-talk-at-strata/</loc>
-        <lastmod>2014-10-21T12:29:51-04:00</lastmod>
+        <lastmod>2014-10-21T09:29:51-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/2014/11/22/thanks/</loc>
-        <lastmod>2014-12-03T23:47:59-05:00</lastmod>
+        <lastmod>2014-12-03T20:47:59-08:00</lastmod>
     </url>
     <url>
         <loc>
             http://sursh.github.com/blog/2014/12/05/the-best-lesson-from-hacker-school-is-hiding-in-plain-sight/
         </loc>
-        <lastmod>2014-12-04T18:16:27-05:00</lastmod>
+        <lastmod>2014-12-04T15:16:27-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/blog/2015/02/19/my-talk-at-strata-san-jose/</loc>
+        <lastmod>2015-02-19T11:15:54-08:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/blog/archives/</loc>
-        <lastmod>2014-12-04T18:16:27-05:00</lastmod>
+        <lastmod>2015-02-19T11:15:54-08:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/</loc>
-        <lastmod>2014-12-04T18:16:27-05:00</lastmod>
+        <lastmod>2015-02-19T11:15:54-08:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/robots.txt</loc>
-        <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+        <lastmod>2013-03-26T14:44:02-07:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/talks/data-audit/</loc>
-        <lastmod>2015-01-13T15:51:33-05:00</lastmod>
+        <lastmod>2015-01-13T12:51:33-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/talks/data-vitals/</loc>
+        <lastmod>2015-02-19T11:11:24-08:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/talks/</loc>
-        <lastmod>2015-01-11T22:05:58-05:00</lastmod>
+        <lastmod>2015-02-19T11:11:50-08:00</lastmod>
     </url>
 </urlset>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bash | Sasha Laundy]]></title>
   <link href="http://sursh.github.com/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2015-01-13T15:52:03-05:00</updated>
+  <updated>2015-02-19T11:16:49-08:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[On Rakefiles and Rabbit Holes]]></title>
     <link href="http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes/"/>
-    <updated>2013-03-25T15:34:00-04:00</updated>
+    <updated>2013-03-25T15:34:00-07:00</updated>
     <id>http://sursh.github.com/blog/2013/03/25/on-rakefiles-and-rabbit-holes</id>
     <content type="html"><![CDATA[<p><strong>TL;DR.</strong> I noticed a bug in Octopress. In fixing it, I found a separate, truly spectacular error, and learned a lot of interesting things about bash. I would never have learned so much outside of Hacker School, since it gives me the time and space to open up the box.</p>
 
