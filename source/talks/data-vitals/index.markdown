@@ -23,7 +23,7 @@ I'll post the video as soon as it's available.
 
 ## Slides
 
-I'll post my slides after my talk
+<script async class="speakerdeck-embed" data-id="bbeb1279f94d42a1a7621a14d9625547" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 
 My slides tend to be sparse and visual. I recommend watching the video.  
 
@@ -43,4 +43,4 @@ Have other favorite tools for quick interrogation? [Tell me about them!](http://
 
 ## Questions, reactions, and followup
 
-Coming after the conference.  
+<div class="storify"><iframe src="//storify.com/SashaLaundy/my-talk-at-strata-2015/embed?border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/SashaLaundy/my-talk-at-strata-2015.js?border=false"></script><noscript>[<a href="//storify.com/SashaLaundy/my-talk-at-strata-2015" target="_blank">View the story "HOWTO Make Your Future Data Science Team Love You" on Storify</a>]</noscript></div>
