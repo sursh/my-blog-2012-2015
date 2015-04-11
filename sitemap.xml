@@ -87,16 +87,24 @@
         <lastmod>2015-03-12T22:13:07-04:00</lastmod>
     </url>
     <url>
+        <loc>http://sursh.github.com/blog/2015/04/11/my-talk-at-pycon/</loc>
+        <lastmod>2015-04-11T15:57:10-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://sursh.github.com/blog/archives/</loc>
-        <lastmod>2015-03-12T22:13:07-04:00</lastmod>
+        <lastmod>2015-04-11T15:57:10-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/</loc>
-        <lastmod>2015-03-12T22:13:07-04:00</lastmod>
+        <lastmod>2015-04-11T15:57:10-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/robots.txt</loc>
         <lastmod>2013-03-26T17:44:02-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/talks/asking-helping/</loc>
+        <lastmod>2015-04-11T16:01:24-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/talks/data-audit/</loc>
@@ -108,6 +116,6 @@
     </url>
     <url>
         <loc>http://sursh.github.com/talks/</loc>
-        <lastmod>2015-02-19T14:17:55-05:00</lastmod>
+        <lastmod>2015-04-11T15:54:42-04:00</lastmod>
     </url>
 </urlset>
