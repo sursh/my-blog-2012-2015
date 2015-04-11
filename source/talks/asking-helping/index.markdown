@@ -21,11 +21,11 @@ I'll post the video as soon as it's available.
 
 ## Slides
 
-Slides will be posted after the talk.
+<script async class="speakerdeck-embed" data-id="3326ffe4f0a1419dba940092983391c8" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 My slides tend to be sparse and visual. I recommend watching the video.  
 
 ## References & Inspiration
 
-I'll also post some of the links and writings that inspired me and helped shape my thinking on this topic. There was also a lot that wouldn't fit in a half hour, so I'll post some of those as well.
+I'll also post some of the links and writings that inspired me and helped shape my thinking on this topic. There was also a lot that wouldn't fit in a half hour but are totally worth reading, so I'll post some of those as well.
 
