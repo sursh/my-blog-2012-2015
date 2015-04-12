@@ -17,7 +17,7 @@ This talk will be split into two halves: giving and then getting technical help.
 
 ## Video
 
-I'll post the video as soon as it's available. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hY14Er6JX2s" frameborder="0" allowfullscreen></iframe>
 
 ## Slides
 
@@ -27,5 +27,5 @@ My slides tend to be sparse and visual. I recommend watching the video.
 
 ## References & Inspiration
 
-I'll also post some of the links and writings that inspired me and helped shape my thinking on this topic. There was also a lot that wouldn't fit in a half hour but are totally worth reading, so I'll post some of those as well.
+I'll also post some of the links and writings that inspired me and helped shape my thinking on this topic. There was also a lot that wouldn't fit in a half hour but are totally worth reading, so I'll post some of those as well. I probably won't have time to do this until Monday, so please bookmark this page and check back! :)
 
