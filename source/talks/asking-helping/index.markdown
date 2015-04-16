@@ -25,7 +25,10 @@ This talk will be split into two halves: giving and then getting technical help.
 
 My slides tend to be sparse and visual. I recommend watching the video.  
 
-## References & Inspiration
+## References & Inspiration & Thanks
 
 I'll also post some of the links and writings that inspired me and helped shape my thinking on this topic. There was also a lot that wouldn't fit in a half hour but are totally worth reading, so I'll post some of those as well. I probably won't have time to do this until Monday, so please bookmark this page and check back! :)
 
+## Feedback
+
+<div class="storify"><iframe src="//storify.com/SashaLaundy/pycon-talk/embed?header=false&border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/SashaLaundy/pycon-talk.js?header=false&border=false"></script><noscript>[<a href="//storify.com/SashaLaundy/pycon-talk" target="_blank">View the story "Tweets about my Pycon 2015 talk" on Storify</a>]</noscript></div>
