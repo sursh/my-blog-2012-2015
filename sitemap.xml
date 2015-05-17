@@ -91,12 +91,16 @@
         <lastmod>2015-04-11T15:57:10-04:00</lastmod>
     </url>
     <url>
+        <loc>http://sursh.github.com/blog/2015/05/17/my-talk-today-at-bang-bang-con/</loc>
+        <lastmod>2015-05-17T15:01:28-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://sursh.github.com/blog/archives/</loc>
-        <lastmod>2015-04-11T15:57:10-04:00</lastmod>
+        <lastmod>2015-05-17T15:01:28-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/</loc>
-        <lastmod>2015-04-11T15:57:10-04:00</lastmod>
+        <lastmod>2015-05-17T15:01:28-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/robots.txt</loc>
@@ -104,7 +108,7 @@
     </url>
     <url>
         <loc>http://sursh.github.com/talks/asking-helping/</loc>
-        <lastmod>2015-04-16T15:52:55-04:00</lastmod>
+        <lastmod>2015-04-17T13:43:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://sursh.github.com/talks/data-audit/</loc>
@@ -116,6 +120,14 @@
     </url>
     <url>
         <loc>http://sursh.github.com/talks/</loc>
-        <lastmod>2015-04-11T15:54:42-04:00</lastmod>
+        <lastmod>2015-05-17T14:47:39-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/talks/platters-in-the-cloud/</loc>
+        <lastmod>2015-05-17T14:56:05-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://sursh.github.com/talks/platters-in-the-cloud/old.html</loc>
+        <lastmod>2015-05-17T14:47:57-04:00</lastmod>
     </url>
 </urlset>

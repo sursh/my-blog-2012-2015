@@ -4,7 +4,7 @@
   <title><![CDATA[Sasha Laundy]]></title>
   <link href="http://sursh.github.com/atom.xml" rel="self"/>
   <link href="http://sursh.github.com/"/>
-  <updated>2015-04-16T15:53:41-04:00</updated>
+  <updated>2015-05-17T15:07:31-04:00</updated>
   <id>http://sursh.github.com/</id>
   <author>
     <name><![CDATA[Sasha Laundy]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My talk today at !!con]]></title>
+    <link href="http://sursh.github.com/blog/2015/05/17/my-talk-today-at-bang-bang-con/"/>
+    <updated>2015-05-17T14:56:00-04:00</updated>
+    <id>http://sursh.github.com/blog/2015/05/17/my-talk-today-at-bang-bang-con</id>
+    <content type="html"><![CDATA[<p>Slides and more for my talk today at !!con are <a href="http://sursh.github.com/talks/platters-in-the-cloud">HERE!!!</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My talk at Pycon]]></title>
