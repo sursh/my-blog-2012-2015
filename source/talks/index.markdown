@@ -1,15 +1,18 @@
 ---
 layout: page
-title: "talks"
+title: ""
 comments: true
 sharing: true
 footer: true
 ---
 
-# [TODAY: PyCon in Montreal, Canada, April 2015](asking-helping)
-"Your Brain's API: Giving and Getting Technical Help." In our "RTFM" technical culture, it can be scary to ask for help. Likewise, it can be easy to be a jerk accidentally when helping others. In this talk I'm going to share some do's and don'ts things I learned from teaching high school physics and neuroscience for five years, from seminars in my male-dominated college major, from Hacker School's wonderful learning environment, and from some great mentors and teachers in the tech industry.
+# TODAY!! [Spinning Metal Platters In The Cloud!](platters-in-the-cloud)
+At Bang Bang Con 2015
 
 # Past talks
+
+### [Your Brain's API: Giving and Getting Technical Help](asking-helping)
+PyCon in Montreal, Canada, April 2015. In our "RTFM" technical culture, it can be scary to ask for help. Likewise, it can be easy to be a jerk accidentally when helping others. In this talk I'm going to share some do's and don'ts things I learned from teaching high school physics and neuroscience for five years, from seminars in my male-dominated college major, from Hacker School's wonderful learning environment, and from some great mentors and teachers in the tech industry.
 
 ### [HOWTO Make Your Future Data Scientist Love You](data-vitals) Redux 
 O'Reilly Strata, San Jose
